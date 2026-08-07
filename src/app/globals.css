@@ -27,6 +27,8 @@
 }
 
 @theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
   --color-primary: var(--primary);
   --color-accent: var(--accent);
   --color-card-bg: var(--card-bg);
@@ -36,19 +38,29 @@
   --color-primary-glow: var(--primary-glow);
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
-  scroll-behavior: smooth;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 4.5rem;
+  }
 }
 
 /* Premium Grid Background pattern */
 .bg-grid-pattern {
   background-size: 40px 40px;
-  background-image: 
+  background-image:
     linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
     linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
 }
@@ -66,6 +78,13 @@ body {
   background: radial-gradient(circle at 50% 50%, var(--primary-glow) 0%, transparent 60%);
 }
 
+/* Accessible focus states */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 /* Smooth custom scrollbars */
 ::-webkit-scrollbar {
   width: 8px;
@@ -81,3 +100,17 @@ body {
   background: rgba(129, 140, 248, 0.4);
 }
 
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

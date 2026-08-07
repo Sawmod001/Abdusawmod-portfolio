@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { MotionConfig } from "framer-motion";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,34 +14,43 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Abdusawmod Abolaji Akande | Backend Developer Portfolio",
-  description: "Professional portfolio of Abdusawmod Abolaji Akande, a backend developer specializing in building secure, scalable APIs with Node.js, Express, PostgreSQL, and MongoDB.",
+  metadataBase: new URL("https://abdusawmod.vercel.app"),
+  title: {
+    default: "Abolaji Abdusawmod Akande — Software Engineer | Full Stack Developer",
+    template: "%s — Abolaji Abdusawmod Akande",
+  },
+  description: "Professional portfolio of Abolaji Abdusawmod Akande, a Software Engineer and Full Stack Developer specializing in building reliable, scalable, and useful digital products.",
   keywords: [
-    "Backend Developer",
-    "Node.js",
-    "Express.js",
-    "PostgreSQL",
-    "MongoDB",
-    "API Security",
-    "Scalable APIs",
     "Software Engineer",
+    "Full Stack Developer",
+    "Frontend",
+    "Backend",
+    "Next.js",
+    "React",
+    "Node.js",
     "Abolaji Akande"
   ],
-  authors: [{ name: "Abdusawmod Abolaji Akande" }],
-  creator: "Abdusawmod Abolaji Akande",
-  metadataBase: new URL("https://abdusawmod.vercel.app"),
+  authors: [{ name: "Abolaji Abdusawmod Akande" }],
+  creator: "Abolaji Abdusawmod Akande",
+  alternates: {
+    canonical: "https://abdusawmod.vercel.app",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://abdusawmod.vercel.app",
-    title: "Abdusawmod Abolaji Akande | Backend Developer Portfolio",
-    description: "Building secure, scalable APIs with Node.js, Express, PostgreSQL, and MongoDB.",
-    siteName: "Abdusawmod Akande Portfolio",
+    siteName: "Abolaji Akande Portfolio",
+    title: "Abolaji Abdusawmod Akande — Software Engineer | Full Stack Developer",
+    description: "Building reliable, scalable, and useful digital products.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Abdusawmod Abolaji Akande | Backend Developer Portfolio",
-    description: "Building secure, scalable APIs with Node.js, Express, PostgreSQL, and MongoDB.",
+    title: "Abolaji Abdusawmod Akande — Software Engineer | Full Stack Developer",
+    description: "Building reliable, scalable, and useful digital products.",
     creator: "@Abolajisawmod",
   },
 };
@@ -72,7 +82,37 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-slate-50 dark:bg-gray-950 text-slate-900 dark:text-gray-100 transition-colors duration-300">
-        {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "@id": "https://abdusawmod.vercel.app/#person",
+              name: "Abolaji Abdusawmod Akande",
+              url: "https://abdusawmod.vercel.app",
+              jobTitle: "Software Engineer | Full Stack Developer",
+              email: "mailto:sawmodabolaji@gmail.com",
+              sameAs: [
+                "https://github.com/Sawmod001",
+                "https://www.linkedin.com/in/abdusawmod-abolaji-b25604245/",
+                "https://x.com/Abolajisawmod",
+              ],
+              knowsAbout: [
+                "Full Stack Development",
+                "REST APIs",
+                "Node.js",
+                "Next.js",
+                "React",
+                "MongoDB",
+                "PostgreSQL",
+                "Secure Authentication",
+                "Applied AI",
+              ],
+            }),
+          }}
+        />
+        <MotionConfig reducedMotion="user">{children}</MotionConfig>
       </body>
     </html>
   );

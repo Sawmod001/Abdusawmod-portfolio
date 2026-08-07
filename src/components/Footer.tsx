@@ -17,18 +17,25 @@ export default function Footer() {
           {/* Brand/Name */}
           <div>
             <p className="text-sm font-semibold text-slate-800 dark:text-gray-200">
-              Abdusawmod Abolaji Akande
+              Abolaji Abdusawmod Akande
             </p>
             <p className="text-xs text-slate-500 dark:text-gray-400 mt-1">
-              Backend Developer Portfolio • 2026
+              Software Engineer | Full Stack Developer
             </p>
           </div>
 
-          {/* Copyright text */}
-          <div className="text-center sm:text-right">
-            <p className="text-xs text-slate-400 dark:text-gray-500">
-              &copy; {new Date().getFullYear()} Abdusawmod Abolaji Akande. All rights reserved.
+          {/* Copyright text & Resume */}
+          <div className="text-center sm:text-right flex flex-col items-center sm:items-end">
+            <p className="text-xs text-slate-400 dark:text-gray-500 mb-2">
+              &copy; {new Date().getFullYear()} Abolaji Abdusawmod Akande. All rights reserved.
             </p>
+            <a 
+              href="/resume.pdf" 
+              download="Abolaji_Abdusawmod_Akande_CV.pdf"
+              className="text-xs text-primary hover:underline underline-offset-4 transition-all"
+            >
+              Download Resume (PDF)
+            </a>
           </div>
 
           {/* Back to Top */}

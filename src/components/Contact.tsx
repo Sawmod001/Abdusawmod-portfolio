@@ -65,10 +65,10 @@ export default function Contact() {
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-slate-900 dark:text-white">
-            Get In Touch
+            Have a product, system, or technical problem worth building?
           </h2>
           <p className="mt-4 text-base text-slate-600 dark:text-gray-400">
-            Have an exciting backend project or opportunity? Reach out directly via email or connect with me on social media.
+            Reach out directly via email or connect with me on social media. I&apos;m always open to discussing engineering challenges and new opportunities.
           </p>
         </div>
 
@@ -90,10 +90,10 @@ export default function Contact() {
                 Direct Communication
               </span>
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
-                Let's Build Something Scalable
+                Let&apos;s Build Something Scalable
               </h3>
               <p className="text-sm text-slate-600 dark:text-gray-400 leading-relaxed mb-8">
-                I'm always open to discussing web application security, RESTful and GraphQL API designs, database optimizations (PostgreSQL/MongoDB), and system engineering projects.
+                I&apos;m always open to discussing web application architectures, secure full-stack implementations, REST API designs, and complex data models.
               </p>
             </div>
 
@@ -104,7 +104,7 @@ export default function Contact() {
                   <div className="p-2 rounded-lg bg-primary/10 text-primary flex-shrink-0">
                     <Mail className="h-5 w-5" />
                   </div>
-                  <span className="text-sm font-bold text-slate-800 dark:text-gray-250 truncate">
+                  <span className="text-sm font-bold text-slate-800 dark:text-gray-100 truncate">
                     {emailAddress}
                   </span>
                 </div>
@@ -112,7 +112,7 @@ export default function Contact() {
                 {/* Copy Button */}
                 <button
                   onClick={copyToClipboard}
-                  className="p-2 rounded-lg bg-white dark:bg-gray-850 hover:bg-slate-50 dark:hover:bg-gray-800 border border-slate-200 dark:border-gray-800 text-slate-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-all cursor-pointer shadow-sm flex-shrink-0"
+                  className="p-2 rounded-lg bg-white dark:bg-gray-800 hover:bg-slate-50 dark:hover:bg-gray-700 border border-slate-200 dark:border-gray-800 text-slate-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-all cursor-pointer shadow-sm flex-shrink-0"
                   title="Copy email to clipboard"
                 >
                   {copied ? (
