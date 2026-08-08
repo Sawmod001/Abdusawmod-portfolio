@@ -29,7 +29,7 @@ const focuses = [
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-white dark:bg-[#030712] relative">
+    <section id="about" className="py-24 bg-white dark:bg-[#0c0a09] relative">
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.02] mix-blend-overlay pointer-events-none" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
@@ -73,7 +73,7 @@ export default function About() {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="group relative overflow-hidden rounded-3xl border border-slate-200 dark:border-gray-800 bg-slate-50/80 dark:bg-gray-900/40">
+            <div className="group relative overflow-hidden rounded-3xl border border-slate-200 dark:border-gray-800 bg-stone-50/80 dark:bg-stone-900/40">
               {/* gradient wash */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none" />
 
@@ -98,8 +98,8 @@ export default function About() {
                 {/* Identity */}
                 <div className="mt-6 text-center">
                   <h3 className="text-xl font-bold text-slate-900 dark:text-white">Abolaji Abdusawmod Akande</h3>
-                  <p className="mt-1 text-sm font-medium text-primary dark:text-indigo-300">
-                    Software Engineer | Full Stack Developer
+                  <p className="mt-1 text-sm font-medium text-primary dark:text-amber-300">
+Software Engineer | Full Stack Developer
                   </p>
                 </div>
               </div>

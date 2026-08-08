@@ -11,7 +11,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full bg-slate-100 dark:bg-gray-950 border-t border-slate-200/50 dark:border-gray-900 py-12 transition-colors duration-300">
+    <footer className="w-full bg-stone-100 dark:bg-[#0c0a09] border-t border-slate-200/50 dark:border-stone-900 py-12 transition-colors duration-300">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           {/* Brand/Name */}

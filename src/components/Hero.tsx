@@ -58,14 +58,14 @@ export default function Hero() {
       className="relative flex min-h-[calc(100vh-4rem)] items-center justify-center overflow-hidden py-20 sm:py-28"
     >
       {/* Sophisticated Dark Background (Aceternity inspired) */}
-      <div className="absolute inset-0 pointer-events-none -z-20 bg-slate-50 dark:bg-[#030712]" />
+      <div className="absolute inset-0 pointer-events-none -z-20 bg-stone-50 dark:bg-[#0c0a09]" />
       
       {/* Very subtle noise/grid */}
       <div className="absolute inset-0 pointer-events-none -z-10 bg-grid-pattern opacity-50 mix-blend-overlay" />
       
       {/* Ambient gradient spotlight */}
-      <div className="absolute top-0 right-0 -z-10 h-[500px] w-[500px] rounded-full bg-primary/10 blur-[100px] dark:bg-primary/5 translate-x-1/3 -translate-y-1/3" />
-      <div className="absolute bottom-0 left-0 -z-10 h-[400px] w-[400px] rounded-full bg-accent/10 blur-[100px] dark:bg-accent/5 -translate-x-1/3 translate-y-1/3" />
+      <div className="absolute top-0 right-0 -z-10 h-[500px] w-[500px] rounded-full bg-primary/15 blur-[110px] dark:bg-primary/10 translate-x-1/3 -translate-y-1/3" />
+      <div className="absolute bottom-0 left-0 -z-10 h-[400px] w-[400px] rounded-full bg-accent/15 blur-[110px] dark:bg-accent/10 -translate-x-1/3 translate-y-1/3" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="flex flex-col items-start justify-center max-w-3xl">
@@ -76,15 +76,19 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
             className="w-full"
           >
-            <div className="inline-flex items-center space-x-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-mono font-medium text-primary dark:text-indigo-300 mb-8">
+            <div className="inline-flex items-center space-x-2 rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-xs font-mono font-medium text-primary dark:text-amber-300 mb-10 shadow-sm shadow-primary/10">
               <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
               <span>Available for new opportunities</span>
             </div>
 
-            <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl text-slate-900 dark:text-white mb-4">
-              <span className="block text-2xl sm:text-3xl font-medium text-slate-500 dark:text-slate-400 mb-2">ABOLAJI ABDUSAWMOD AKANDE</span>
-              {mounted && <TextReveal text="Software Engineer | Full Stack Developer" />}
-              {!mounted && <span>Software Engineer | Full Stack Developer</span>}
+            <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl text-slate-900 dark:text-white mb-6">
+              <span className="block font-mono text-base sm:text-lg font-medium uppercase tracking-[0.18em] text-primary mb-5">
+                Abolaji Abdusawmod Akande
+              </span>
+              <span className="block">{mounted ? <TextReveal text="Software Engineer" /> : 'Software Engineer'}</span>
+              <span className="animate-gradient-x block text-4xl font-semibold sm:text-5xl md:text-6xl mt-2 pb-2">
+                Full Stack Developer
+              </span>
             </h1>
 
             <p className="mt-6 text-lg sm:text-xl leading-relaxed text-slate-600 dark:text-gray-400 max-w-2xl font-light">
@@ -95,9 +99,9 @@ export default function Hero() {
             <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <a
                 href="#projects"
-                className="group relative inline-flex items-center justify-center rounded-lg bg-primary px-8 py-3.5 text-sm font-medium text-white overflow-hidden transition-all hover:scale-[1.02] active:scale-95"
+                className="group relative inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 px-8 py-3.5 text-sm font-semibold text-stone-950 shadow-lg shadow-amber-500/20 overflow-hidden transition-all hover:scale-[1.02] hover:shadow-amber-500/30 active:scale-95"
               >
-                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <span className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity" />
                 <span className="relative flex items-center justify-center">
                   View My Work
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />

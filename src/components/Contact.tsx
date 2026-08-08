@@ -59,7 +59,7 @@ export default function Contact() {
 
 
   return (
-    <section id="contact" className="py-24 sm:py-32 bg-slate-50 dark:bg-gray-950">
+    <section id="contact" className="py-24 sm:py-32 bg-stone-50 dark:bg-stone-950">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
@@ -129,7 +129,7 @@ export default function Contact() {
               {/* Direct Mailto Button */}
               <a
                 href={`mailto:${emailAddress}`}
-                className="w-full inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3.5 text-sm font-semibold text-white shadow hover:bg-opacity-95 transition-all cursor-pointer"
+                className="w-full inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 px-6 py-3.5 text-sm font-semibold text-stone-950 shadow-lg shadow-amber-500/25 transition-all hover:shadow-amber-500/35 hover:brightness-105 cursor-pointer"
               >
                 Send Email Directly
                 <Send className="ml-2 h-4 w-4" />

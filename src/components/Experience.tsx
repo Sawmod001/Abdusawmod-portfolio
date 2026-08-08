@@ -5,7 +5,7 @@ import { experienceData } from '@/data/experience';
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 bg-slate-50 dark:bg-gray-950 relative overflow-hidden">
+    <section id="experience" className="py-24 bg-stone-50 dark:bg-stone-950 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -38,7 +38,7 @@ export default function Experience() {
                   className={`relative flex flex-col sm:flex-row items-center ${isEven ? 'sm:flex-row-reverse' : ''}`}
                 >
                   {/* Timeline Dot */}
-                  <div className="absolute left-0 sm:left-1/2 w-4 h-4 rounded-full bg-primary ring-4 ring-slate-50 dark:ring-gray-950 -translate-x-1/2 z-10" />
+                  <div className="absolute left-0 sm:left-1/2 w-4 h-4 rounded-full bg-primary ring-4 ring-stone-50 dark:ring-[#0c0a09] -translate-x-1/2 z-10" />
 
                   {/* Date (Desktop) */}
                   <div className={`hidden sm:block w-1/2 ${isEven ? 'text-left pl-8' : 'text-right pr-8'}`}>

@@ -64,7 +64,7 @@ export default function Header() {
       <div
         className={`border-b transition-all duration-300 ${
           scrolled
-            ? 'border-slate-200/70 dark:border-gray-800/70 bg-slate-50/85 dark:bg-gray-950/85 backdrop-blur-xl shadow-sm'
+            ? 'border-slate-200/70 dark:border-gray-800/70 bg-stone-50/85 dark:bg-[#0c0a09]/85 backdrop-blur-xl shadow-sm'
             : 'border-transparent'
         }`}
       >
@@ -88,7 +88,7 @@ export default function Header() {
                     aria-current={active ? 'true' : undefined}
                     className={`relative rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-200 ${
                       active
-                        ? 'text-primary dark:text-indigo-300'
+                        ? 'text-primary dark:text-amber-300'
                         : 'text-slate-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary'
                     }`}
                   >
@@ -146,7 +146,7 @@ export default function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden border-b border-slate-200/60 dark:border-gray-800/60 bg-slate-50/95 dark:bg-gray-950/95 backdrop-blur-xl overflow-hidden"
+            className="md:hidden border-b border-slate-200/60 dark:border-gray-800/60 bg-stone-50/95 dark:bg-[#0c0a09]/95 backdrop-blur-xl overflow-hidden"
             id="mobile-nav"
           >
             <div className="space-y-1 px-4 pb-4 pt-2">
@@ -160,7 +160,7 @@ export default function Header() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`block rounded-lg px-3 py-2.5 text-base font-medium transition-colors ${
                     activeSection === item.id
-                      ? 'text-primary bg-primary/5 dark:text-indigo-300 dark:bg-indigo-500/10'
+                      ? 'text-primary bg-primary/10 dark:text-amber-300 dark:bg-amber-400/10'
                       : 'text-slate-700 hover:bg-slate-100 hover:text-primary dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-primary'
                   }`}
                 >

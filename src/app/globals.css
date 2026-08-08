@@ -1,34 +1,37 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8fafc; /* slate-50 */
-  --foreground: #0f172a; /* slate-900 */
-  --primary: #4f46e5;    /* indigo-600 */
-  --primary-glow: rgba(79, 70, 229, 0.15);
-  --accent: #7c3aed;     /* violet-600 */
+  --background: #fafaf9; /* stone-50 warm off-white */
+  --foreground: #1c1917; /* stone-900 */
+  --primary: #d97706;    /* amber-600 */
+  --primary-glow: rgba(217, 119, 6, 0.15);
+  --accent: #ea580c;     /* orange-600 */
+  --gradient-brand: linear-gradient(110deg, #d97706 0%, #ea580c 45%, #c2410c 100%);
   --card-bg: rgba(255, 255, 255, 0.7);
-  --card-border: rgba(15, 23, 42, 0.06);
-  --grid-color: rgba(79, 70, 229, 0.05);
-  --badge-bg: rgba(79, 70, 229, 0.08);
-  --badge-text: #4f46e5;
+  --card-border: rgba(28, 25, 23, 0.08);
+  --grid-color: rgba(217, 119, 6, 0.08);
+  --badge-bg: rgba(217, 119, 6, 0.1);
+  --badge-text: #b45309;
 }
 
 .dark {
-  --background: #030712; /* custom deep gray-950 */
-  --foreground: #f3f4f6; /* gray-100 */
-  --primary: #818cf8;    /* indigo-400 */
-  --primary-glow: rgba(129, 140, 248, 0.15);
-  --accent: #a78bfa;     /* violet-400 */
-  --card-bg: rgba(17, 24, 39, 0.45); /* translucent gray-900 */
-  --card-border: rgba(255, 255, 255, 0.05);
-  --grid-color: rgba(129, 140, 248, 0.04);
-  --badge-bg: rgba(129, 140, 248, 0.1);
-  --badge-text: #a5b4fc;
+  --background: #0c0a09; /* stone-950 warm charcoal */
+  --foreground: #f5f5f4; /* stone-100 */
+  --primary: #fbbf24;    /* amber-400 */
+  --primary-glow: rgba(251, 191, 36, 0.16);
+  --accent: #fb923c;     /* orange-400 */
+  --gradient-brand: linear-gradient(110deg, #fbbf24 0%, #fb923c 50%, #f97316 100%);
+  --card-bg: rgba(12, 10, 9, 0.55);
+  --card-border: rgba(255, 255, 255, 0.07);
+  --grid-color: rgba(251, 191, 36, 0.05);
+  --badge-bg: rgba(251, 191, 36, 0.1);
+  --badge-text: #fcd34d;
 }
 
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-space-grotesk);
   --color-primary: var(--primary);
   --color-accent: var(--accent);
   --color-card-bg: var(--card-bg);
@@ -49,6 +52,17 @@ body {
   font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Display type across the site */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display), var(--font-geist-sans), system-ui, sans-serif;
+  letter-spacing: -0.02em;
 }
 
 @media (max-width: 640px) {
@@ -78,6 +92,33 @@ body {
   background: radial-gradient(circle at 50% 50%, var(--primary-glow) 0%, transparent 60%);
 }
 
+/* Brand text gradient (amber → orange) */
+.text-gradient-brand {
+  background-image: var(--gradient-brand);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Gradient text shimmer (200% background sweep) */
+.animate-gradient-x {
+  background-size: 200% 100%;
+  background-image: var(--gradient-brand);
+  animation: gradient-x 6s ease infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+@keyframes gradient-x {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
 /* Accessible focus states */
 :focus-visible {
   outline: 2px solid var(--primary);
@@ -93,11 +134,11 @@ body {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(129, 140, 248, 0.2);
+  background: rgba(251, 191, 36, 0.2);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(129, 140, 248, 0.4);
+  background: rgba(251, 191, 36, 0.4);
 }
 
 /* Respect users who prefer reduced motion */
