@@ -3,40 +3,9 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Download, Mail } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '@/components/icons';
-import { useMounted } from '@/hooks/use-mounted';
-
-// Subtle Text Reveal Effect (Aceternity style)
-const TextReveal = ({ text }: { text: string }) => {
-  const words = text.split(" ");
-  return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={{
-        visible: { transition: { staggerChildren: 0.05 } },
-        hidden: {},
-      }}
-      className="inline-block"
-    >
-      {words.map((word, idx) => (
-        <motion.span
-          key={idx}
-          variants={{
-            hidden: { opacity: 0, y: 10 },
-            visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
-          }}
-          className="inline-block mr-2"
-        >
-          {word}
-        </motion.span>
-      ))}
-    </motion.div>
-  );
-};
+import AnimatedName from '@/components/AnimatedName';
 
 export default function Hero() {
-  const mounted = useMounted();
-
   const socials = [
     {
       name: 'GitHub',
@@ -81,15 +50,14 @@ export default function Hero() {
               <span>Available for new opportunities</span>
             </div>
 
-            <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl text-slate-900 dark:text-white mb-6">
-              <span className="block font-mono text-base sm:text-lg font-medium uppercase tracking-[0.18em] text-primary mb-5">
-                Abolaji Abdusawmod Akande
-              </span>
-              <span className="block">{mounted ? <TextReveal text="Software Engineer" /> : 'Software Engineer'}</span>
-              <span className="animate-gradient-x block text-4xl font-semibold sm:text-5xl md:text-6xl mt-2 pb-2">
-                Full Stack Developer
-              </span>
+            <h1 aria-label="Abolaji Abdusawmod Akande" className="mb-6">
+              <AnimatedName />
             </h1>
+
+            <p className="mt-4 font-mono text-base sm:text-xl font-medium text-stone-500 dark:text-stone-400">
+              Software Engineer
+              <span className="text-gradient-brand font-semibold"> · Full Stack Developer</span>
+            </p>
 
             <p className="mt-6 text-lg sm:text-xl leading-relaxed text-slate-600 dark:text-gray-400 max-w-2xl font-light">
               Building reliable, scalable, and useful digital products. Focused on full-stack architecture, secure authentication systems, and practical AI integrations.
