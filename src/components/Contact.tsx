@@ -64,7 +64,10 @@ export default function Contact() {
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-slate-900 dark:text-white">
+          <span className="text-sm font-mono text-primary font-semibold tracking-wider uppercase">
+            Let&apos;s build
+          </span>
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-slate-900 dark:text-white mt-2">
             Have a product, system, or technical problem worth building?
           </h2>
           <p className="mt-4 text-base text-slate-600 dark:text-gray-400">

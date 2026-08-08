@@ -18,9 +18,14 @@ export const leadershipData: LeadershipRole[] = [
     highlights: [
       'Founded Unfiltered Yoruba — a cultural and intellectual platform on "Yoruba Identity Beyond the Narrative"',
       'Prepared and coordinated 100+ official letters, notices, invitations, sponsorship requests, and courtesy-visit correspondence',
-      'Managed 80+ documents and coordinated 300+ participants across events',
-      'Grew membership to 600+ and served as department representative for the council',
     ],
+  },
+  {
+    id: 'insu-senator',
+    role: 'Senator — INSU NHQ',
+    organization: 'INSU UNILORIN',
+    date: '2025',
+    description: 'Represented the INSU UNILORIN campus as Senator at the INSU National Headquarters (NHQ).',
   },
   {
     id: 'awc-coordinator',
@@ -65,7 +70,7 @@ export const leadershipData: LeadershipRole[] = [
   {
     id: 'honourable-rep',
     role: 'Honourable Representative',
-    organization: 'Department of Science Education',
+    organization: 'Department',
     date: '2025',
     description: 'Represented the department as its official union representative.',
   },

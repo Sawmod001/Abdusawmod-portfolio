@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { MapPin, Database, Server, Shield, Brain, FolderGit2, GraduationCap, HeartHandshake, Briefcase } from 'lucide-react';
 
 const focuses = [
@@ -84,18 +85,21 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none" />
 
               <div className="relative p-6 sm:p-8">
-                {/* Portrait */}
-                <div className="relative mx-auto w-44 sm:w-56">
-                  <div className="absolute -inset-2 rounded-3xl bg-gradient-to-br from-primary via-accent to-transparent opacity-60 blur-sm transition-opacity duration-300 group-hover:opacity-90" />
-                  <div className="relative aspect-[4/5] overflow-hidden rounded-[1.2rem] border-2 border-white/80 dark:border-gray-800/80 bg-slate-200 dark:bg-gray-800 shadow-xl">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src="/photo.jpg"
-                      alt="Portrait of Abolaji Abdusawmod Akande"
-                      loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
+{/* Portrait */}
+                <div className="relative mx-auto w-44 sm:w-52">
+                  <div className="rounded-[1.35rem] bg-gradient-to-br from-slate-300 via-slate-100 to-slate-300 p-[3px] shadow-2xl dark:from-gray-600 dark:via-gray-900 dark:to-gray-600">
+                    <div className="relative aspect-[4/5] overflow-hidden rounded-[1.15rem] bg-slate-200 dark:bg-gray-800">
+                      <Image
+                        src="/photo.jpg"
+                        alt="Portrait of Abolaji Abdusawmod Akande"
+                        fill
+                        sizes="(max-width: 640px) 176px, 208px"
+                        priority={false}
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                      />
+                    </div>
                   </div>
+                  <div className="mx-auto mt-3 h-px w-3/4 bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
                 </div>
 
                 {/* Identity */}

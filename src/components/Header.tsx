@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
 import { Sun, Moon, Menu, X } from 'lucide-react';
 import { useThemeMode, setThemeMode } from '@/lib/theme-store';
 
@@ -21,6 +21,9 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [scrolled, setScrolled] = useState(false);
+
+  const { scrollYProgress } = useScroll();
+  const progressScale = useSpring(scrollYProgress, { stiffness: 140, damping: 30, mass: 0.2 });
 
   const toggleTheme = () => setThemeMode(isDark ? 'light' : 'dark');
 
@@ -53,6 +56,11 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full transition-all duration-300">
+      <motion.div
+        className="absolute inset-x-0 top-0 z-10 h-0.5 origin-left bg-gradient-to-r from-primary to-accent"
+        style={{ scaleX: progressScale }}
+        aria-hidden="true"
+      />
       <div
         className={`border-b transition-all duration-300 ${
           scrolled
