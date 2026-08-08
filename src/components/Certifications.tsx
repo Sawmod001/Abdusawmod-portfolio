@@ -70,11 +70,23 @@ export default function Certifications() {
                   className="p-5 rounded-xl glass-panel border border-slate-200 dark:border-gray-800 hover:border-primary/30 transition-colors"
                 >
                   <h3 className="text-base font-semibold text-slate-900 dark:text-gray-100">{role.role}</h3>
-                  <div className="flex items-center justify-between mt-1 mb-3">
+                  <div className="flex items-center justify-between mt-1 mb-3 gap-3">
                     <span className="text-sm font-medium text-slate-600 dark:text-gray-400">{role.organization}</span>
-                    <span className="text-xs font-mono text-primary">{role.date}</span>
+                    <span className="text-xs font-mono text-primary flex-shrink-0">{role.date}</span>
                   </div>
-                  <p className="text-sm text-slate-500 dark:text-gray-400">{role.description}</p>
+                  {role.description && (
+                    <p className="text-sm text-slate-500 dark:text-gray-400">{role.description}</p>
+                  )}
+                  {role.highlights && role.highlights.length > 0 && (
+                    <ul className="mt-3 space-y-2">
+                      {role.highlights.map((point) => (
+                        <li key={point} className="flex items-start gap-2.5 text-sm text-slate-600 dark:text-gray-300">
+                          <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-primary" />
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </motion.div>
               ))}
             </div>
