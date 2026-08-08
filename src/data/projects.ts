@@ -17,7 +17,7 @@ export const projectsData: Project[] = [
     description: 'An end-to-end marketplace connecting users to venues, housing viewings, and food pre-orders across Nigeria. Features responsive booking/listing screens, dual booking engines for exclusive/capacity-based reservations, and a split-settlement payment workflow.',
     githubUrl: 'https://github.com/Sawmod001/HOSTME',
     liveUrl: 'https://hostme-xbhx.vercel.app/',
-    tags: ['Next.js', 'React', 'Tailwind CSS', 'Node.js', 'MongoDB', 'Clerk', 'Cloudinary', 'Paystack'],
+    tags: ['Next.js', 'React', 'Tailwind CSS', 'Node.js', 'Supabase', 'Clerk', 'Cloudinary', 'Paystack'],
   },
   {
     id: 'aurashop',

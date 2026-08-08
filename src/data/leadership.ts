@@ -81,4 +81,18 @@ export const leadershipData: LeadershipRole[] = [
     date: "'26 Cohort",
     description: 'Selected participant in the JCI Unilorin Harmony Academy class of 2026.',
   },
+  {
+    id: 'au-simulation',
+    role: 'Delegate — Representing Mali',
+    organization: 'African Union Simulation Summit 2026',
+    date: '2026',
+    description: 'Represented Mali as a delegate at the African Union Simulation Summit 2026.',
+  },
+  {
+    id: 'kwara-cop',
+    role: 'African Bloc Representative',
+    organization: 'KWARA COP Youth Climate Simulation',
+    date: '2026',
+    description: 'Represented the African Bloc at the KWARA COP Youth Climate Simulation.',
+  },
 ];

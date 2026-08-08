@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { MapPin, Database, Server, Shield, Brain, FolderGit2, GraduationCap, HeartHandshake, Briefcase } from 'lucide-react';
+import { Database, Server, Shield, Brain } from 'lucide-react';
 
 const focuses = [
   {
@@ -25,13 +25,6 @@ const focuses = [
     description: 'Integrating Python, LangChain, and RAG pipelines to build intelligent features.',
     icon: <Brain className="h-6 w-6 text-primary" />,
   },
-];
-
-const stats = [
-  { label: 'Projects', value: '6', icon: <FolderGit2 className="h-4 w-4" /> },
-  { label: 'Internships', value: '2', icon: <Briefcase className="h-4 w-4" /> },
-  { label: 'Leadership Roles', value: '8', icon: <HeartHandshake className="h-4 w-4" /> },
-  { label: 'CGPA', value: '4.10', icon: <GraduationCap className="h-4 w-4" /> },
 ];
 
 export default function About() {
@@ -63,13 +56,13 @@ export default function About() {
             className="prose prose-lg dark:prose-invert text-slate-600 dark:text-gray-400"
           >
             <p>
-              I am a Software Engineer based in Ilorin, Nigeria, specializing in full-stack development with a strong focus on backend systems, API architecture, and database design.
+              I&apos;m a software engineer specializing in full-stack development with a strong focus on backend systems, API architecture and database design.
             </p>
             <p>
-              I build reliable digital products that solve real problems. Whether it&apos;s developing an end-to-end booking marketplace, engineering secure payment workflows, or integrating applied AI for healthcare triage, I focus on delivering clean, maintainable, and production-ready code.
+              I build reliable products that solve real problems, architecting end-to-end marketplaces, engineering secure payment workflows and applying AI to healthcare triage. Solving problems is what pulls me into a project in the first place and I care as much about the code being clean and production-ready as I do about who it actually serves.
             </p>
             <p>
-              Currently pursuing a B.Sc. in Science Education at the University of Ilorin (CGPA: 4.10), I balance my academic rigor with practical software engineering experience and community leadership.
+              I&apos;m also a social impact advocate at heart. I love volunteering and I believe talent built anywhere deserves a shot at global standards. I&apos;ve spent the last two years building, leading and turning local potential into global-standard quality.
             </p>
           </motion.div>
 
@@ -108,29 +101,6 @@ export default function About() {
                   <p className="mt-1 text-sm font-medium text-primary dark:text-indigo-300">
                     Software Engineer | Full Stack Developer
                   </p>
-                  <span className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary dark:text-indigo-300">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                    Available for opportunities
-                  </span>
-                  <div className="mt-4 flex items-center justify-center gap-1.5 text-xs text-slate-500 dark:text-gray-400">
-                    <MapPin className="h-3.5 w-3.5" />
-                    Ilorin, Nigeria
-                  </div>
-                </div>
-
-                {/* Quick stats */}
-                <div className="mt-6 grid grid-cols-4 gap-2 border-t border-slate-200/70 pt-5 dark:border-gray-800">
-                  {stats.map((stat) => (
-                    <div key={stat.label} className="text-center">
-                      <div className="mx-auto mb-1 flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                        {stat.icon}
-                      </div>
-                      <div className="text-lg font-bold text-slate-900 dark:text-white">{stat.value}</div>
-                      <div className="text-[10px] font-medium uppercase tracking-wide text-slate-500 dark:text-gray-400">
-                        {stat.label}
-                      </div>
-                    </div>
-                  ))}
                 </div>
               </div>
             </div>

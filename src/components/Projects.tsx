@@ -95,7 +95,7 @@ export default function Projects() {
                   {(
                     [
                       'Dual booking engines for exclusive-space and capacity-based reservations',
-                      'MongoDB data layer for listings, bookings, payments, reviews and vendor roles',
+                      'Supabase (PostgreSQL) data layer for listings, bookings, payments, reviews and vendor roles',
                       'Split-settlement payment workflow with a booking-hold system to prevent double-booking',
                     ] as const
                   ).map((point) => (

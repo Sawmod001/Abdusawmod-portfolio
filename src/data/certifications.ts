@@ -20,8 +20,29 @@ export const certificationsData: Certification[] = [
   },
   {
     id: 'm4ace-mentee',
-    title: 'M4ACE Backend Development Mentee (2026)',
-    issuer: 'TrybeFuse Mentorship Cohort 3.0'
+    title: 'M4ACE Backend Development Mentee',
+    issuer: 'M4ACE',
+    description: '2026'
+  },
+  {
+    id: 'trybefuse-mentor',
+    title: 'TrybeFuse Mentorship Cohort 3.0',
+    issuer: 'TrybeFuse'
+  },
+  {
+    id: 'youth-can-lead',
+    title: 'Youth Can Lead Fellowship',
+    issuer: 'Youth Can Lead'
+  },
+  {
+    id: 'ysd-advocate',
+    title: 'Youth Advocate for Sustainable Development Training',
+    issuer: 'YSD'
+  },
+  {
+    id: 'aiidev-africa',
+    title: 'Africa SDG Mentorship Fellow',
+    issuer: 'AIIDEV Africa'
   },
   {
     id: 'data-analyst',
