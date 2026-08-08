@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://abdusawmod.vercel.app"),
+  metadataBase: new URL("https://abdusawmod-portfolio.vercel.app"),
   title: {
     default: "Abolaji Abdusawmod Akande — Software Engineer | Full Stack Developer",
     template: "%s — Abolaji Abdusawmod Akande",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Abolaji Abdusawmod Akande" }],
   creator: "Abolaji Abdusawmod Akande",
   alternates: {
-    canonical: "https://abdusawmod.vercel.app",
+    canonical: "https://abdusawmod-portfolio.vercel.app",
   },
   robots: {
     index: true,
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://abdusawmod.vercel.app",
+    url: "https://abdusawmod-portfolio.vercel.app",
     siteName: "Abolaji Akande Portfolio",
     title: "Abolaji Abdusawmod Akande — Software Engineer | Full Stack Developer",
     description: "Building reliable, scalable, and useful digital products.",
@@ -88,9 +88,9 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              "@id": "https://abdusawmod.vercel.app/#person",
+              "@id": "https://abdusawmod-portfolio.vercel.app/#person",
               name: "Abolaji Abdusawmod Akande",
-              url: "https://abdusawmod.vercel.app",
+              url: "https://abdusawmod-portfolio.vercel.app",
               jobTitle: "Software Engineer | Full Stack Developer",
               email: "mailto:sawmodabolaji@gmail.com",
               sameAs: [
