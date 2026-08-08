@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Copy, Check, Send } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, FacebookIcon, InstagramIcon, XIcon } from '@/components/icons';
+import Magnetic from '@/components/Magnetic';
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
@@ -127,13 +128,15 @@ export default function Contact() {
               </div>
 
               {/* Direct Mailto Button */}
-              <a
-                href={`mailto:${emailAddress}`}
-                className="w-full inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 px-6 py-3.5 text-sm font-semibold text-stone-950 shadow-lg shadow-amber-500/25 transition-all hover:shadow-amber-500/35 hover:brightness-105 cursor-pointer"
-              >
-                Send Email Directly
-                <Send className="ml-2 h-4 w-4" />
-              </a>
+              <Magnetic className="w-full">
+                <a
+                  href={`mailto:${emailAddress}`}
+                  className="w-full inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 px-6 py-3.5 text-sm font-semibold text-stone-950 shadow-lg shadow-amber-500/25 transition-all hover:shadow-amber-500/35 hover:brightness-105 cursor-pointer"
+                >
+                  Send Email Directly
+                  <Send className="ml-2 h-4 w-4" />
+                </a>
+              </Magnetic>
             </div>
           </motion.div>
 

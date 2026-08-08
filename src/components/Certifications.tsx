@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { certificationsData } from '@/data/certifications';
 import { leadershipData } from '@/data/leadership';
+import TiltCard from '@/components/TiltCard';
 
 export default function Certifications() {
   return (
@@ -41,22 +42,23 @@ export default function Certifications() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {certificationsData.map((cert, index) => (
-              <motion.div
-                key={cert.id}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="flex flex-col p-5 rounded-xl glass-panel border border-slate-200 dark:border-gray-800 hover:border-primary/30 transition-colors hover:-translate-y-0.5"
-              >
-                <h4 className="text-sm font-semibold text-slate-900 dark:text-gray-100 leading-snug">{cert.title}</h4>
-                <div className="mt-2 flex items-center justify-between gap-2">
-                  <span className="text-xs font-medium text-primary">{cert.issuer}</span>
-                  {cert.description && (
-                    <span className="shrink-0 font-mono text-[10px] text-slate-400 dark:text-gray-500">{cert.description}</span>
-                  )}
-                </div>
-              </motion.div>
+              <TiltCard key={cert.id} max={6} className="h-full">
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className="flex h-full flex-col p-5 rounded-xl glass-panel border border-slate-200 dark:border-gray-800 hover:border-primary/30 transition-colors"
+                >
+                  <h4 className="text-sm font-semibold text-slate-900 dark:text-gray-100 leading-snug">{cert.title}</h4>
+                  <div className="mt-2 flex items-center justify-between gap-2">
+                    <span className="text-xs font-medium text-primary">{cert.issuer}</span>
+                    {cert.description && (
+                      <span className="shrink-0 font-mono text-[10px] text-slate-400 dark:text-gray-500">{cert.description}</span>
+                    )}
+                  </div>
+                </motion.div>
+              </TiltCard>
             ))}
           </div>
         </div>
@@ -79,33 +81,34 @@ export default function Certifications() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {leadershipData.map((role, index) => (
-              <motion.div
-                key={role.id}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="flex flex-col p-4 rounded-xl glass-panel border border-slate-200 dark:border-gray-800 hover:border-primary/30 transition-colors"
-              >
-                <div className="flex items-start justify-between gap-2">
-                  <h4 className="text-sm font-semibold text-slate-900 dark:text-gray-100 leading-snug">{role.role}</h4>
-                  <span className="shrink-0 font-mono text-[11px] text-primary">{role.date}</span>
-                </div>
-                <p className="mt-1 text-xs font-medium text-slate-500 dark:text-gray-400">{role.organization}</p>
+              <TiltCard key={role.id} max={5} className="h-full">
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className="flex h-full flex-col p-4 rounded-xl glass-panel border border-slate-200 dark:border-gray-800 hover:border-primary/30 transition-colors"
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <h4 className="text-sm font-semibold text-slate-900 dark:text-gray-100 leading-snug">{role.role}</h4>
+                    <span className="shrink-0 font-mono text-[11px] text-primary">{role.date}</span>
+                  </div>
+                  <p className="mt-1 text-xs font-medium text-slate-500 dark:text-gray-400">{role.organization}</p>
 
-                {role.highlights && role.highlights.length > 0 ? (
-                  <ul className="mt-3 space-y-1.5">
-                    {role.highlights.map((point) => (
-                      <li key={point} className="flex items-start gap-2 text-xs leading-relaxed text-slate-600 dark:text-gray-300">
-                        <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-primary" />
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                ) : role.description ? (
-                  <p className="mt-2 text-xs leading-relaxed text-slate-500 dark:text-gray-400">{role.description}</p>
-                ) : null}
-              </motion.div>
+                  {role.highlights && role.highlights.length > 0 ? (
+                    <ul className="mt-3 space-y-1.5">
+                      {role.highlights.map((point) => (
+                        <li key={point} className="flex items-start gap-2 text-xs leading-relaxed text-slate-600 dark:text-gray-300">
+                          <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-primary" />
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : role.description ? (
+                    <p className="mt-2 text-xs leading-relaxed text-slate-500 dark:text-gray-400">{role.description}</p>
+                  ) : null}
+                </motion.div>
+              </TiltCard>
             ))}
           </div>
         </div>

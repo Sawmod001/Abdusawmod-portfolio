@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { GithubIcon } from '@/components/icons';
+import TiltCard from '@/components/TiltCard';
 import { projectsData, type Project } from '@/data/projects';
 
 const categoryStyles: Record<Project['category'], { chip: string; gradient: string; glow: string }> = {
@@ -191,14 +192,14 @@ export default function Projects() {
           {selectedProjects.map((project, index) => {
             const style = categoryStyles[project.category] ?? categoryStyles.Other;
             return (
-              <motion.article
-                key={project.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
-                className={`group flex flex-col overflow-hidden rounded-2xl border border-slate-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg ${style.glow}`}
-              >
+              <TiltCard key={project.id} max={6} className="h-full">
+                <motion.article
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-50px' }}
+                  transition={{ duration: 0.5, delay: index * 0.08 }}
+                  className={`group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 transition-colors duration-300 hover:border-primary/40 hover:shadow-lg ${style.glow}`}
+                >
                 {/* Preview banner */}
                 <div
                   className={`relative h-32 flex-shrink-0 overflow-hidden bg-gradient-to-br ${style.gradient} border-b border-slate-200/60 dark:border-gray-800/60`}
@@ -270,9 +271,10 @@ export default function Projects() {
                     )}
                   </div>
                 </div>
-              </motion.article>
-            );
-          })}
+                  </motion.article>
+                </TiltCard>
+              );
+            })}
         </div>
       </div>
     </section>

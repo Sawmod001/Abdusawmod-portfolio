@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Download, Mail } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '@/components/icons';
 import AnimatedName from '@/components/AnimatedName';
+import Magnetic from '@/components/Magnetic';
 
 export default function Hero() {
   const socials = [
@@ -65,25 +66,29 @@ export default function Hero() {
 
             {/* CTAs */}
             <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-              <a
-                href="#projects"
-                className="group relative inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 px-8 py-3.5 text-sm font-semibold text-stone-950 shadow-lg shadow-amber-500/20 overflow-hidden transition-all hover:scale-[1.02] hover:shadow-amber-500/30 active:scale-95"
-              >
-                <span className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-                <span className="relative flex items-center justify-center">
-                  View My Work
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </a>
+              <Magnetic>
+                <a
+                  href="#projects"
+                  className="group relative inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 px-8 py-3.5 text-sm font-semibold text-stone-950 shadow-lg shadow-amber-500/20 overflow-hidden transition-all hover:scale-[1.02] hover:shadow-amber-500/30 active:scale-95"
+                >
+                  <span className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <span className="relative flex items-center justify-center">
+                    View My Work
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </a>
+              </Magnetic>
 
-              <a
-                href="/resume.pdf"
-                download="Abolaji_Abdusawmod_Akande_CV.pdf"
-                className="inline-flex w-full items-center justify-center rounded-lg border border-slate-300 dark:border-gray-800 bg-white/10 dark:bg-gray-900/10 backdrop-blur-md px-8 py-3.5 text-sm font-medium text-slate-700 dark:text-gray-200 hover:bg-slate-100 dark:hover:bg-gray-800 transition-all hover:scale-[1.02] active:scale-95"
-              >
-                Download CV
-                <Download className="ml-2 h-4 w-4" />
-              </a>
+              <Magnetic>
+                <a
+                  href="/resume.pdf"
+                  download="Abolaji_Abdusawmod_Akande_CV.pdf"
+                  className="inline-flex w-full items-center justify-center rounded-lg border border-slate-300 dark:border-gray-800 bg-white/10 dark:bg-gray-900/10 backdrop-blur-md px-8 py-3.5 text-sm font-medium text-slate-700 dark:text-gray-200 hover:bg-slate-100 dark:hover:bg-gray-800 transition-all hover:scale-[1.02] active:scale-95"
+                >
+                  Download CV
+                  <Download className="ml-2 h-4 w-4" />
+                </a>
+              </Magnetic>
             </div>
 
             {/* Social Links */}

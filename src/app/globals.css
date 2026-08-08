@@ -141,6 +141,19 @@ h6 {
   background: rgba(251, 191, 36, 0.4);
 }
 
+/* Marquee for skill strip */
+.marquee-track {
+  animation: marquee 32s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 /* Respect users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
   html {
