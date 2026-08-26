@@ -25,8 +25,8 @@ export default function Contact() {
       name: 'GitHub',
       username: 'Sawmod001',
       href: 'https://github.com/Sawmod001',
-      icon: <GithubIcon className="h-6 w-6 text-slate-800 dark:text-gray-200" />,
-      color: 'hover:border-black/50 dark:hover:border-white/50',
+      icon: <GithubIcon className="h-6 w-6 text-gray-200" />,
+      color: 'hover:border-white/50',
     },
     {
       name: 'LinkedIn',
@@ -39,8 +39,8 @@ export default function Contact() {
       name: 'X',
       username: '@Abolajisawmod',
       href: 'https://x.com/Abolajisawmod',
-      icon: <XIcon className="h-6 w-6 text-slate-800 dark:text-gray-200" />,
-      color: 'hover:border-black/50 dark:hover:border-white/50',
+      icon: <XIcon className="h-6 w-6 text-gray-200" />,
+      color: 'hover:border-white/50',
     },
     {
       name: 'Facebook',
@@ -60,7 +60,7 @@ export default function Contact() {
 
 
   return (
-    <section id="contact" className="py-24 sm:py-32 bg-stone-50 dark:bg-stone-950">
+    <section id="contact" className="py-24 sm:py-32 bg-[#0c0a09]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
@@ -68,10 +68,10 @@ export default function Contact() {
           <span className="text-sm font-mono text-primary font-semibold tracking-wider uppercase">
             Let&apos;s build
           </span>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-slate-900 dark:text-white mt-2">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-white mt-2">
             Have a product, system, or technical problem worth building?
           </h2>
-          <p className="mt-4 text-base text-slate-600 dark:text-gray-400">
+          <p className="mt-4 text-base text-gray-400">
             Reach out directly via email or connect with me on social media. I&apos;m always open to discussing engineering challenges and new opportunities.
           </p>
         </div>
@@ -93,22 +93,22 @@ export default function Contact() {
               <span className="inline-flex items-center rounded-md bg-badge-bg px-2.5 py-0.5 text-xs font-semibold text-badge-text mb-6">
                 Direct Communication
               </span>
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+              <h3 className="text-2xl font-bold text-white mb-4">
                 Let&apos;s Build Something Scalable
               </h3>
-              <p className="text-sm text-slate-600 dark:text-gray-400 leading-relaxed mb-8">
+              <p className="text-sm text-gray-400 leading-relaxed mb-8">
                 I&apos;m always open to discussing web application architectures, secure full-stack implementations, REST API designs, and complex data models.
               </p>
             </div>
 
             <div className="space-y-6">
               {/* Explicit Email Box */}
-              <div className="p-4 rounded-xl bg-slate-100/80 dark:bg-gray-900/80 border border-slate-200/50 dark:border-gray-800/80 flex items-center justify-between gap-4">
+              <div className="p-4 rounded-xl bg-gray-900/80 border border-gray-800/80 flex items-center justify-between gap-4">
                 <div className="flex items-center space-x-3 overflow-hidden">
                   <div className="p-2 rounded-lg bg-primary/10 text-primary flex-shrink-0">
                     <Mail className="h-5 w-5" />
                   </div>
-                  <span className="text-sm font-bold text-slate-800 dark:text-gray-100 truncate">
+                  <span className="text-sm font-bold text-gray-100 truncate">
                     {emailAddress}
                   </span>
                 </div>
@@ -116,7 +116,7 @@ export default function Contact() {
                 {/* Copy Button */}
                 <button
                   onClick={copyToClipboard}
-                  className="p-2 rounded-lg bg-white dark:bg-gray-800 hover:bg-slate-50 dark:hover:bg-gray-700 border border-slate-200 dark:border-gray-800 text-slate-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-all cursor-pointer shadow-sm flex-shrink-0"
+                  className="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 border border-gray-800 text-gray-300 hover:text-primary transition-all cursor-pointer shadow-sm flex-shrink-0"
                   title="Copy email to clipboard"
                 >
                   {copied ? (
@@ -157,21 +157,21 @@ export default function Contact() {
                 className={`flex items-center justify-between rounded-xl glass-panel p-5 ${social.color} transition-all duration-300 group cursor-pointer`}
               >
                 <div className="flex items-center space-x-3.5">
-                  <div className="p-2.5 rounded-lg bg-slate-100 dark:bg-gray-900 border border-slate-200/50 dark:border-gray-800/80 shadow-sm group-hover:scale-105 transition-transform">
+                  <div className="p-2.5 rounded-lg bg-gray-900 border border-gray-800/80 shadow-sm group-hover:scale-105 transition-transform">
                     {social.icon}
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                    <h4 className="text-sm font-bold text-white">
                       {social.name}
                     </h4>
-                    <p className="text-xs text-slate-500 dark:text-gray-400">
+                    <p className="text-xs text-gray-400">
                       {social.username}
                     </p>
                   </div>
                 </div>
                 
                 {/* Arrow indicator */}
-                <div className="h-8 w-8 rounded-full border border-slate-200 dark:border-gray-800 flex items-center justify-center text-slate-400 group-hover:text-primary group-hover:border-primary/30 transition-all">
+                <div className="h-8 w-8 rounded-full border border-gray-800 flex items-center justify-center text-gray-400 group-hover:text-primary group-hover:border-primary/30 transition-all">
                   <span className="text-xs font-bold font-mono">→</span>
                 </div>
               </a>

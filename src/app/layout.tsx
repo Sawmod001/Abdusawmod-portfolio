@@ -70,24 +70,10 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} h-full scroll-smooth antialiased`}
-      suppressHydrationWarning
     >
       <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                  document.documentElement.classList.add('dark');
-                } else {
-                  document.documentElement.classList.remove('dark');
-                }
-              } catch (_) {}
-            `,
-          }}
-        />
       </head>
-      <body className="min-h-full flex flex-col bg-stone-50 dark:bg-[#0c0a09] text-stone-900 dark:text-stone-100 transition-colors duration-300">
+      <body className="min-h-full flex flex-col bg-[#0c0a09] text-stone-100 transition-colors duration-300">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

@@ -94,7 +94,7 @@ export default function AnimatedName() {
     (_, i) => lengths.slice(0, i).reduce<number>((a, b) => a + b, 0)
   );
 
-  const base = 'font-display font-extrabold leading-[1.02] tracking-[-0.035em] text-stone-900 dark:text-stone-50';
+  const base = 'font-display font-extrabold leading-[1.02] tracking-[-0.035em] text-stone-50';
 
   if (reduce) {
     return (

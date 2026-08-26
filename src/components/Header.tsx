@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
-import { Sun, Moon, Menu, X } from 'lucide-react';
-import { useThemeMode, setThemeMode } from '@/lib/theme-store';
+import { Menu, X } from 'lucide-react';
 
 const navItems = [
   { name: 'Home', href: '#home', id: 'home' },
@@ -16,16 +15,12 @@ const navItems = [
 ];
 
 export default function Header() {
-  const theme = useThemeMode();
-  const isDark = theme === 'dark';
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [scrolled, setScrolled] = useState(false);
 
   const { scrollYProgress } = useScroll();
   const progressScale = useSpring(scrollYProgress, { stiffness: 140, damping: 30, mass: 0.2 });
-
-  const toggleTheme = () => setThemeMode(isDark ? 'light' : 'dark');
 
   useEffect(() => {
     const sections = navItems
@@ -64,7 +59,7 @@ export default function Header() {
       <div
         className={`border-b transition-all duration-300 ${
           scrolled
-            ? 'border-slate-200/70 dark:border-gray-800/70 bg-stone-50/85 dark:bg-[#0c0a09]/85 backdrop-blur-xl shadow-sm'
+            ? 'border-gray-800/70 bg-[#0c0a09]/85 backdrop-blur-xl shadow-sm'
             : 'border-transparent'
         }`}
       >
@@ -88,8 +83,8 @@ export default function Header() {
                     aria-current={active ? 'true' : undefined}
                     className={`relative rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-200 ${
                       active
-                        ? 'text-primary dark:text-amber-300'
-                        : 'text-slate-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary'
+                        ? 'text-amber-300'
+                        : 'text-gray-300 hover:text-primary'
                     }`}
                   >
                     {item.name}
@@ -103,29 +98,13 @@ export default function Header() {
                   </a>
                 );
               })}
-
-              <button
-                onClick={toggleTheme}
-                className="ml-3 p-2 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-slate-800 dark:text-gray-100 transition-colors cursor-pointer"
-                aria-label="Toggle theme"
-              >
-                {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-              </button>
             </div>
 
             {/* Mobile Controls */}
             <div className="flex md:hidden items-center space-x-2">
               <button
-                onClick={toggleTheme}
-                className="p-2 rounded-lg bg-slate-100 dark:bg-gray-800 text-slate-800 dark:text-gray-100 cursor-pointer"
-                aria-label="Toggle theme"
-              >
-                {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-              </button>
-
-              <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-2 rounded-lg text-slate-600 hover:text-slate-900 dark:text-gray-300 dark:hover:text-white cursor-pointer"
+                className="p-2 rounded-lg text-gray-300 hover:text-white cursor-pointer"
                 aria-label="Toggle mobile menu"
                 aria-expanded={isMobileMenuOpen}
                 aria-controls="mobile-nav"
@@ -146,7 +125,7 @@ export default function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden border-b border-slate-200/60 dark:border-gray-800/60 bg-stone-50/95 dark:bg-[#0c0a09]/95 backdrop-blur-xl overflow-hidden"
+            className="md:hidden border-b border-gray-800/60 bg-[#0c0a09]/95 backdrop-blur-xl overflow-hidden"
             id="mobile-nav"
           >
             <div className="space-y-1 px-4 pb-4 pt-2">
@@ -160,8 +139,8 @@ export default function Header() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`block rounded-lg px-3 py-2.5 text-base font-medium transition-colors ${
                     activeSection === item.id
-                      ? 'text-primary bg-primary/10 dark:text-amber-300 dark:bg-amber-400/10'
-                      : 'text-slate-700 hover:bg-slate-100 hover:text-primary dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-primary'
+                      ? 'text-amber-300 bg-amber-400/10'
+                      : 'text-gray-300 hover:bg-gray-800 hover:text-primary'
                   }`}
                 >
                   {item.name}

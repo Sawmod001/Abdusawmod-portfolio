@@ -8,32 +8,32 @@ import { projectsData, type Project } from '@/data/projects';
 
 const categoryStyles: Record<Project['category'], { chip: string; gradient: string; glow: string }> = {
   Featured: {
-    chip: 'bg-amber-500/10 text-amber-600 dark:text-amber-300 border-amber-500/20',
+    chip: 'bg-amber-500/10 text-amber-300 border-amber-500/20',
     gradient: 'from-amber-500/20 via-orange-500/10 to-transparent',
     glow: 'group-hover:shadow-amber-500/10',
   },
   'Full Stack': {
-    chip: 'bg-sky-500/10 text-sky-600 dark:text-sky-300 border-sky-500/20',
+    chip: 'bg-sky-500/10 text-sky-300 border-sky-500/20',
     gradient: 'from-sky-500/20 via-cyan-500/10 to-transparent',
     glow: 'group-hover:shadow-sky-500/10',
   },
   Backend: {
-    chip: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-300 border-emerald-500/20',
+    chip: 'bg-emerald-500/10 text-emerald-300 border-emerald-500/20',
     gradient: 'from-emerald-500/20 via-teal-500/10 to-transparent',
     glow: 'group-hover:shadow-emerald-500/10',
   },
   API: {
-    chip: 'bg-amber-500/10 text-amber-600 dark:text-amber-300 border-amber-500/20',
+    chip: 'bg-amber-500/10 text-amber-300 border-amber-500/20',
     gradient: 'from-amber-500/20 via-orange-500/10 to-transparent',
     glow: 'group-hover:shadow-amber-500/10',
   },
   AI: {
-    chip: 'bg-fuchsia-500/10 text-fuchsia-600 dark:text-fuchsia-300 border-fuchsia-500/20',
+    chip: 'bg-fuchsia-500/10 text-fuchsia-300 border-fuchsia-500/20',
     gradient: 'from-fuchsia-500/20 via-pink-500/10 to-transparent',
     glow: 'group-hover:shadow-fuchsia-500/10',
   },
   Other: {
-    chip: 'bg-slate-500/10 text-slate-600 dark:text-slate-300 border-slate-500/20',
+    chip: 'bg-slate-500/10 text-slate-300 border-slate-500/20',
     gradient: 'from-slate-500/20 via-gray-500/10 to-transparent',
     glow: 'group-hover:shadow-slate-500/10',
   },
@@ -44,7 +44,7 @@ export default function Projects() {
   const selectedProjects = projectsData.filter((p) => p.id !== 'hostme');
 
   return (
-    <section id="projects" className="py-24 bg-white dark:bg-[#0c0a09] relative overflow-hidden">
+    <section id="projects" className="py-24 bg-[#0c0a09] relative overflow-hidden">
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.02] mix-blend-overlay pointer-events-none" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
@@ -58,7 +58,7 @@ export default function Projects() {
           <span className="text-sm font-mono text-primary font-semibold tracking-wider uppercase">
             Selected engineering work
           </span>
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-white sm:text-4xl mt-2">Featured Work</h2>
+          <h2 className="text-3xl font-bold text-white sm:text-4xl mt-2">Featured Work</h2>
           <div className="h-1 w-20 bg-primary mt-4 rounded-full" />
         </motion.div>
 
@@ -69,7 +69,7 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.7 }}
-            className="group relative mb-24 overflow-hidden rounded-3xl border border-slate-200 dark:border-gray-800 bg-gradient-to-br from-slate-50 via-white to-amber-50/50 dark:from-gray-900/60 dark:via-gray-950 dark:to-orange-950/40 shadow-xl shadow-amber-500/5"
+            className="group relative mb-24 overflow-hidden rounded-3xl border border-gray-800 bg-gradient-to-br from-gray-900/60 via-gray-950 to-orange-950/40 shadow-xl shadow-amber-500/5"
           >
             {/* Animated spotlight sweep */}
             <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -77,18 +77,18 @@ export default function Projects() {
             </div>
 
             {/* Category chip */}
-            <span className="absolute left-6 top-6 z-10 rounded-full border border-amber-500/20 bg-amber-500/10 px-3 py-1 text-xs font-mono font-medium text-amber-600 dark:text-amber-300">
+            <span className="absolute left-6 top-6 z-10 rounded-full border border-amber-500/20 bg-amber-500/10 px-3 py-1 text-xs font-mono font-medium text-amber-300">
               Flagship Project
             </span>
 
             <div className="grid grid-cols-1 lg:grid-cols-12">
               {/* Text content */}
               <div className="order-2 flex flex-col justify-center p-8 lg:order-1 lg:col-span-6 lg:p-12">
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl">
+                <h3 className="text-2xl font-bold text-white sm:text-3xl">
                   {flagshipProject.title.split('—')[0].trim()}
                 </h3>
 
-                <p className="mt-4 leading-relaxed text-slate-600 dark:text-gray-400">
+                <p className="mt-4 leading-relaxed text-gray-400">
                   {flagshipProject.description}
                 </p>
 
@@ -100,7 +100,7 @@ export default function Projects() {
                       'Split-settlement payment workflow with a booking-hold system to prevent double-booking',
                     ] as const
                   ).map((point) => (
-                    <li key={point} className="flex items-start gap-3 text-sm text-slate-600 dark:text-gray-300">
+                    <li key={point} className="flex items-start gap-3 text-sm text-gray-300">
                       <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                       {point}
                     </li>
@@ -112,7 +112,7 @@ export default function Projects() {
                     href={flagshipProject.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-lg border border-slate-300 dark:border-gray-700 px-5 py-2.5 text-sm font-medium text-slate-700 dark:text-gray-200 transition-all hover:border-primary/40 hover:text-primary dark:hover:text-amber-300"
+                    className="inline-flex items-center gap-2 rounded-lg border border-gray-700 px-5 py-2.5 text-sm font-medium text-gray-200 transition-all hover:border-primary/40 hover:text-primary hover:text-amber-300"
                   >
                     <GithubIcon className="h-4 w-4" />
                     Repository
@@ -131,36 +131,36 @@ export default function Projects() {
 
               {/* Browser mockup preview */}
               <div className="order-1 lg:order-2 relative lg:col-span-6 min-h-[280px] sm:min-h-[360px]">
-                <div className="absolute inset-0 bg-[radial-gradient(#4f46e5_1px,transparent_1px)] [background-size:22px_22px] opacity-[0.08] dark:opacity-[0.15]" />
+                <div className="absolute inset-0 bg-[radial-gradient(#4f46e5_1px,transparent_1px)] [background-size:22px_22px] opacity-[0.15]" />
                 <div className="absolute inset-8 sm:inset-10 flex items-center justify-center">
-                  <div className="w-full max-w-md overflow-hidden rounded-xl border border-slate-200/70 dark:border-gray-700/60 bg-white/80 dark:bg-gray-900/70 shadow-2xl backdrop-blur">
+                  <div className="w-full max-w-md overflow-hidden rounded-xl border border-gray-700/60 bg-gray-900/70 shadow-2xl backdrop-blur">
                     {/* Browser chrome */}
-                    <div className="flex items-center gap-2 border-b border-slate-200/70 dark:border-gray-800 px-4 py-3">
+                    <div className="flex items-center gap-2 border-b border-gray-800 px-4 py-3">
                       <span className="h-2.5 w-2.5 rounded-full bg-red-400/80" />
                       <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
                       <span className="h-2.5 w-2.5 rounded-full bg-green-400/80" />
-                      <span className="ml-3 flex-1 truncate rounded-md bg-slate-100 dark:bg-gray-800 px-3 py-1 font-mono text-[10px] text-slate-400 dark:text-gray-500">
+                      <span className="ml-3 flex-1 truncate rounded-md bg-gray-800 px-3 py-1 font-mono text-[10px] text-gray-500">
                         hostme-xbhx.vercel.app
                       </span>
                     </div>
                     {/* Mock UI */}
                     <div className="p-5">
                       <div className="mb-4 flex items-center justify-between">
-                        <div className="h-3 w-16 rounded-full bg-slate-200 dark:bg-gray-700" />
+                        <div className="h-3 w-16 rounded-full bg-gray-700" />
                         <div className="flex gap-1.5">
-                          <div className="h-2.5 w-2.5 rounded-full bg-slate-200 dark:bg-gray-700" />
-                          <div className="h-2.5 w-2.5 rounded-full bg-slate-200 dark:bg-gray-700" />
+                          <div className="h-2.5 w-2.5 rounded-full bg-gray-700" />
+                          <div className="h-2.5 w-2.5 rounded-full bg-gray-700" />
                         </div>
                       </div>
                       <div className="grid grid-cols-2 gap-3">
                         <div className="col-span-2 h-20 rounded-lg bg-gradient-to-br from-amber-400/40 to-orange-400/30" />
-                        <div className="h-16 rounded-lg bg-slate-100 dark:bg-gray-800" />
-                        <div className="h-16 rounded-lg bg-slate-100 dark:bg-gray-800" />
+                        <div className="h-16 rounded-lg bg-gray-800" />
+                        <div className="h-16 rounded-lg bg-gray-800" />
                       </div>
                       <div className="mt-4 flex items-center justify-between">
                         <div className="space-y-2">
-                          <div className="h-2.5 w-28 rounded-full bg-slate-200 dark:bg-gray-700" />
-                          <div className="h-2.5 w-20 rounded-full bg-slate-200/70 dark:bg-gray-800" />
+                          <div className="h-2.5 w-28 rounded-full bg-gray-700" />
+                          <div className="h-2.5 w-20 rounded-full bg-gray-800" />
                         </div>
                         <div className="h-8 w-24 rounded-lg bg-primary/90" />
                       </div>
@@ -184,7 +184,7 @@ export default function Projects() {
             <span className="text-sm font-mono text-primary font-semibold tracking-wider uppercase">
               More engineering
             </span>
-            <h3 className="mt-2 text-2xl font-bold text-slate-900 dark:text-white">Selected Work</h3>
+            <h3 className="mt-2 text-2xl font-bold text-white">Selected Work</h3>
           </div>
         </motion.div>
 
@@ -198,14 +198,14 @@ export default function Projects() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-50px' }}
                   transition={{ duration: 0.5, delay: index * 0.08 }}
-                  className={`group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 transition-colors duration-300 hover:border-primary/40 hover:shadow-lg ${style.glow}`}
+                  className={`group flex h-full flex-col overflow-hidden rounded-2xl border border-gray-800 bg-gray-900/40 transition-colors duration-300 hover:border-primary/40 hover:shadow-lg ${style.glow}`}
                 >
                 {/* Preview banner */}
                 <div
-                  className={`relative h-32 flex-shrink-0 overflow-hidden bg-gradient-to-br ${style.gradient} border-b border-slate-200/60 dark:border-gray-800/60`}
+                  className={`relative h-32 flex-shrink-0 overflow-hidden bg-gradient-to-br ${style.gradient} border-b border-gray-800/60`}
                 >
                   <div className="absolute inset-0 bg-[radial-gradient(rgba(120,120,140,0.15)_1px,transparent_1px)] [background-size:16px_16px] opacity-40" />
-                  <span className="absolute left-4 top-4 font-mono text-3xl font-bold text-slate-900/10 dark:text-white/10 group-hover:text-primary/25 transition-colors">
+                  <span className="absolute left-4 top-4 font-mono text-3xl font-bold text-white/10 group-hover:text-primary/25 transition-colors">
                     {String(index + 2).padStart(2, '0')}
                   </span>
                   <div className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-2">
@@ -213,7 +213,7 @@ export default function Projects() {
                       {project.category}
                     </span>
                     {project.inProgress && (
-                      <span className="rounded-full bg-orange-100 px-2.5 py-1 text-[10px] uppercase tracking-wider text-orange-600 dark:bg-orange-900/30 dark:text-orange-400">
+                      <span className="rounded-full bg-orange-900/30 px-2.5 py-1 text-[10px] uppercase tracking-wider text-orange-400">
                         In Progress
                       </span>
                     )}
@@ -222,11 +222,11 @@ export default function Projects() {
 
                 {/* Card body */}
                 <div className="flex flex-1 flex-col p-6">
-                  <h4 className="text-lg font-bold text-slate-900 dark:text-white transition-colors group-hover:text-primary dark:group-hover:text-amber-300">
+                  <h4 className="text-lg font-bold text-white transition-colors group-hover:text-primary group-hover:text-amber-300">
                     {project.title}
                   </h4>
 
-                  <p className="mt-3 flex-grow text-sm leading-relaxed text-slate-600 dark:text-gray-400">
+                  <p className="mt-3 flex-grow text-sm leading-relaxed text-gray-400">
                     {project.description}
                   </p>
 
@@ -234,25 +234,25 @@ export default function Projects() {
                     {project.tags.slice(0, 4).map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-md bg-slate-100 px-2 py-1 font-mono text-[11px] text-slate-500 dark:bg-gray-800 dark:text-gray-400"
+                        className="rounded-md bg-gray-800 px-2 py-1 font-mono text-[11px] text-gray-400"
                       >
                         {tag}
                       </span>
                     ))}
                     {project.tags.length > 4 && (
-                      <span className="rounded-md bg-slate-100 px-2 py-1 font-mono text-[11px] text-slate-500 dark:bg-gray-800 dark:text-gray-400">
+                      <span className="rounded-md bg-gray-800 px-2 py-1 font-mono text-[11px] text-gray-400">
                         +{project.tags.length - 4}
                       </span>
                     )}
                   </div>
 
-                  <div className="mt-6 flex items-center gap-3 border-t border-slate-100 pt-4 dark:border-gray-800">
+                  <div className="mt-6 flex items-center gap-3 border-t border-gray-800 pt-4">
                     {project.githubUrl && (
                       <a
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-lg border border-slate-200 px-3.5 py-2 text-xs font-medium text-slate-600 dark:border-gray-700 dark:text-gray-300 transition-colors hover:border-primary/40 hover:text-primary dark:hover:text-amber-300"
+                        className="inline-flex items-center gap-2 rounded-lg border border-gray-700 px-3.5 py-2 text-xs font-medium text-gray-300 transition-colors hover:border-primary/40 hover:text-primary hover:text-amber-300"
                       >
                         <GithubIcon className="h-4 w-4" />
                         Code
