@@ -1,7 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ExternalLink, ChevronDown } from 'lucide-react';
 import { GithubIcon } from '@/components/icons';
 import TiltCard from '@/components/TiltCard';
 import { projectsData, type Project } from '@/data/projects';
@@ -40,8 +41,9 @@ const categoryStyles: Record<Project['category'], { chip: string; gradient: stri
 };
 
 export default function Projects() {
-  const flagshipProject = projectsData.find((p) => p.id === 'hostme');
-  const selectedProjects = projectsData.filter((p) => p.id !== 'hostme');
+  const [expanded, setExpanded] = useState(false);
+  const flagshipProject = projectsData.find((p) => p.id === 'clockhost');
+  const selectedProjects = projectsData.filter((p) => p.id !== 'clockhost');
 
   return (
     <section id="projects" className="py-24 bg-[#0c0a09] relative overflow-hidden">
@@ -85,38 +87,68 @@ export default function Projects() {
               {/* Text content */}
               <div className="order-2 flex flex-col justify-center p-8 lg:order-1 lg:col-span-6 lg:p-12">
                 <h3 className="text-2xl font-bold text-white sm:text-3xl">
-                  {flagshipProject.title.split('—')[0].trim()}
+                  {flagshipProject.title}
                 </h3>
 
                 <p className="mt-4 leading-relaxed text-gray-400">
                   {flagshipProject.description}
                 </p>
 
-                <ul className="mt-6 space-y-3">
-                  {(
-                    [
-                      'Dual booking engines for exclusive-space and capacity-based reservations',
-                      'Supabase (PostgreSQL) data layer for listings, bookings, payments, reviews and vendor roles',
-                      'Split-settlement payment workflow with a booking-hold system to prevent double-booking',
-                    ] as const
-                  ).map((point) => (
-                    <li key={point} className="flex items-start gap-3 text-sm text-gray-300">
-                      <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                      {point}
-                    </li>
-                  ))}
-                </ul>
+                {flagshipProject.highlights && (
+                  <ul className="mt-6 space-y-3">
+                    {flagshipProject.highlights.map((point) => (
+                      <li key={point} className="flex items-start gap-3 text-sm text-gray-300">
+                        <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {/* Expandable Details */}
+                {flagshipProject.details && (
+                  <div className="mt-6">
+                    <button
+                      onClick={() => setExpanded(!expanded)}
+                      className="flex items-center gap-2 text-sm font-medium text-primary hover:text-amber-300 transition-colors cursor-pointer"
+                    >
+                      {expanded ? 'Show Less' : 'Learn More'}
+                      <ChevronDown
+                        className={`h-4 w-4 transition-transform duration-300 ${expanded ? 'rotate-180' : ''}`}
+                      />
+                    </button>
+
+                    <AnimatePresence>
+                      {expanded && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: 'easeInOut' }}
+                          className="overflow-hidden"
+                        >
+                          <div className="mt-4 space-y-5 border-t border-gray-800 pt-5">
+                            {flagshipProject.details.map((section) => (
+                              <div key={section.label}>
+                                <h4 className="text-sm font-semibold text-white mb-2">{section.label}</h4>
+                                <ul className="space-y-1.5">
+                                  {section.items.map((item) => (
+                                    <li key={item} className="flex items-start gap-2 text-xs leading-relaxed text-gray-400">
+                                      <span className="mt-1 h-1 w-1 flex-shrink-0 rounded-full bg-gray-600" />
+                                      {item}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                )}
 
                 <div className="mt-8 flex flex-wrap items-center gap-3">
-                  <a
-                    href={flagshipProject.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-lg border border-gray-700 px-5 py-2.5 text-sm font-medium text-gray-200 transition-all hover:border-primary/40 hover:text-primary hover:text-amber-300"
-                  >
-                    <GithubIcon className="h-4 w-4" />
-                    Repository
-                  </a>
                   <a
                     href={flagshipProject.liveUrl}
                     target="_blank"
@@ -140,7 +172,7 @@ export default function Projects() {
                       <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
                       <span className="h-2.5 w-2.5 rounded-full bg-green-400/80" />
                       <span className="ml-3 flex-1 truncate rounded-md bg-gray-800 px-3 py-1 font-mono text-[10px] text-gray-500">
-                        hostme-xbhx.vercel.app
+                        clockhost.vercel.app
                       </span>
                     </div>
                     {/* Mock UI */}
