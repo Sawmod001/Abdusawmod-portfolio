@@ -51,12 +51,10 @@ export default function Certifications() {
                   className="flex h-full flex-col p-5 rounded-xl glass-panel border border-gray-800 hover:border-primary/30 transition-colors"
                 >
                   <h4 className="text-sm font-semibold text-gray-100 leading-snug">{cert.title}</h4>
-                  <div className="mt-2 flex items-center justify-between gap-2">
-                    <span className="text-xs font-medium text-primary">{cert.issuer}</span>
-                    {cert.description && (
-                      <span className="shrink-0 font-mono text-[10px] text-gray-500">{cert.description}</span>
-                    )}
-                  </div>
+                  <p className="mt-2 text-xs font-medium text-primary">{cert.issuer}</p>
+                  {cert.description && (
+                    <p className="mt-1 font-mono text-[10px] text-gray-500">{cert.description}</p>
+                  )}
                 </motion.div>
               </TiltCard>
             ))}
