@@ -11,13 +11,12 @@ export interface Project {
 
 export const projectsData: Project[] = [
   {
-    id: 'hostme',
-    title: 'HostMe — Multi-Vertical Booking Marketplace',
+    id: 'clockhost',
+    title: 'ClockHost — Two-Sided Booking Marketplace',
     category: 'Featured',
-    description: 'An end-to-end marketplace connecting users to venues, housing viewings, and food pre-orders across Nigeria. Features responsive booking/listing screens, dual booking engines for exclusive/capacity-based reservations, and a split-settlement payment workflow.',
-    githubUrl: 'https://github.com/Sawmod001/HOSTME',
-    liveUrl: 'https://hostme-xbhx.vercel.app/',
-    tags: ['Next.js', 'React', 'Tailwind CSS', 'Node.js', 'Supabase', 'Clerk', 'Cloudinary', 'Paystack'],
+    description: 'A Nigerian two-sided marketplace connecting people looking for places to book with hosts who have spaces or short-term accommodation to offer. Features role-based accounts, capacity/exclusive/shortlet/group booking engines, Paystack payments in Naira, AI-powered assistant, messaging, reviews, and a full admin dashboard — built around Africa/Lagos timezone.',
+    liveUrl: 'https://clockhost.vercel.app/',
+    tags: ['Next.js', 'React', 'Tailwind CSS', 'Supabase', 'PostgreSQL', 'Clerk', 'Paystack', 'Google Gemini', 'Zod'],
   },
   {
     id: 'aurashop',
@@ -44,20 +43,11 @@ export const projectsData: Project[] = [
     tags: ['Node.js', 'Express', 'Prisma', 'MongoDB', 'JWT'],
   },
   {
-    id: 'one-event',
-    title: 'ONE EVENT',
-    category: 'Backend',
-    description: 'Experimental/In-progress secure event management and ticketing backend. Built to explore heavy concurrent request loads and role-based access controls.',
-    githubUrl: 'https://github.com/Sawmod001/ONE-EVENT',
-    tags: ['Node.js', 'Express', 'PostgreSQL', 'JWT', 'REST API'],
-    inProgress: true,
-  },
-  {
-    id: 'mongodb-integration',
-    title: 'MongoDB Database Integration',
-    category: 'Backend',
-    description: 'Technical project demonstrating complex MongoDB queries, schema design, and database integration workflows within a Node.js environment.',
-    githubUrl: 'https://github.com/Sawmod001/MONGODB-DATABASE-INTEGRATION',
-    tags: ['MongoDB', 'Node.js', 'Mongoose', 'Database Design'],
+    id: 'hakeela',
+    title: 'Hakeela',
+    category: 'Other',
+    description: '"Building the Future of Tech Inclusion one community at a time" — Using AI + Empathy to create an inclusive and sustainable future of edtech for young Africans that are marginalized, underprivileged, and specially assisted.',
+    liveUrl: 'https://www.hakeela.org',
+    tags: ['AI', 'EdTech', 'Social Impact', 'Community'],
   }
 ];
