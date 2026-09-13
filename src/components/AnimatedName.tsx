@@ -94,13 +94,13 @@ export default function AnimatedName() {
     (_, i) => lengths.slice(0, i).reduce<number>((a, b) => a + b, 0)
   );
 
-  const base = 'font-display font-extrabold leading-[1.02] tracking-[-0.035em] text-stone-50';
+  const base = 'font-display font-extrabold leading-[1.02] tracking-[-0.035em] text-stone-50 max-w-full overflow-hidden';
 
   if (reduce) {
     return (
       <div className={base}>
         {NAME_WORDS.map((word) => (
-          <div key={word} className="block whitespace-nowrap text-[clamp(2.5rem,10.5vw,7.5rem)]">
+          <div key={word} className="block whitespace-nowrap text-[clamp(1.85rem,10.5vw,7.5rem)]">
             {word}
           </div>
         ))}
@@ -119,7 +119,7 @@ export default function AnimatedName() {
       <motion.div initial="hidden" animate="visible" className="flex flex-col">
         {NAME_WORDS.map((word, wi) => (
           <MagneticWord key={word} pX={pX} pY={pY} factor={WORD_FACTORS[wi].x}>
-            <span className="block whitespace-nowrap text-[clamp(2.5rem,10.5vw,7.5rem)]">
+            <span className="block whitespace-nowrap text-[clamp(1.85rem,10.5vw,7.5rem)]">
               {word.split('').map((char, ci) => (
                 <motion.span
                   key={ci}

@@ -6,7 +6,7 @@ export interface ProjectDetail {
 export interface Project {
   id: string;
   title: string;
-  category: 'Featured' | 'Full Stack' | 'Backend' | 'API' | 'AI' | 'Other';
+  category: 'Featured' | 'Full Stack' | 'Backend' | 'API' | 'AI' | 'Frontend' | 'Other';
   description: string;
   githubUrl?: string;
   liveUrl?: string;
@@ -77,28 +77,27 @@ export const projectsData: Project[] = [
     ],
   },
   {
-    id: 'aurashop',
-    title: 'AuraShop',
-    category: 'API',
-    description: 'Modular MVC REST API for an e-commerce product catalog and checkout system. Demonstrates structured backend architecture and validated CRUD operations.',
-    githubUrl: 'https://github.com/Sawmod001/AURASHOP',
-    tags: ['Node.js', 'Express', 'MongoDB', 'REST API', 'MVC'],
+    id: 'bolaji-3d',
+    title: 'Stunning 3D Website',
+    category: 'Frontend',
+    description: 'Immersive 3D portfolio experience built with HTML, CSS & Spline — blending interactive 3D scenes, smooth animations, and responsive layout for a stunning visual storytelling.',
+    liveUrl: 'https://bolaji-inky.vercel.app/',
+    githubUrl: 'https://github.com/Sawmod001/BOLAJI',
+    tags: ['HTML', 'CSS', 'Spline', '3D', 'Responsive'],
   },
   {
-    id: 'trackapp',
-    title: 'TrackApp',
+    id: 'card-validation-api',
+    title: 'Card Validation API',
     category: 'API',
-    description: 'REST API for job-application and expense tracking, focusing on API development, data validation, and handling structured CRUD workflows.',
-    githubUrl: 'https://github.com/Sawmod001/TrackApp-Node-API',
-    tags: ['Node.js', 'Express', 'MongoDB', 'REST API'],
-  },
-  {
-    id: 'training-center',
-    title: 'Training Center Management API',
-    category: 'Backend',
-    description: 'REST API with JWT authentication and capacity-validated enrollment. Features real-time payment tracking to replace manual reporting.',
-    githubUrl: 'https://github.com/Sawmod001/TRAINING-CENTER-MANAGEMENT',
-    tags: ['Node.js', 'Express', 'Prisma', 'MongoDB', 'JWT'],
+    description: 'A single POST endpoint that determines whether a card number is structurally valid — via the Luhn checksum, card-network prefix (IIN) matching, and network-specific length rules — run as an ordered validation pipeline. Live on Render.',
+    liveUrl: 'https://card-number-validation-api-op27.onrender.com',
+    githubUrl: 'https://github.com/Sawmod001/card-number-validation-api',
+    tags: ['Node.js', 'Express', 'REST API', 'Luhn', 'Render'],
+    highlights: [
+      'POST /cards/validate { cardNumber: "4111111111111111" } → { valid: true, scheme: "visa" }',
+      'Ordered pipeline: Luhn checksum → IIN prefix → length rules',
+      'Auto-deploy from main on Render',
+    ],
   },
   {
     id: 'hakeela',

@@ -23,7 +23,7 @@ export default function Experience() {
 
         <div className="max-w-3xl mx-auto relative">
           {/* Timeline Line */}
-          <div className="absolute left-0 sm:left-1/2 top-0 bottom-0 w-px bg-gray-800 -translate-x-1/2" />
+          <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-px bg-gray-800 -translate-x-1/2" />
 
           <div className="space-y-12">
             {experienceData.map((exp, index) => {
@@ -38,7 +38,7 @@ export default function Experience() {
                   className={`relative flex flex-col sm:flex-row items-center ${isEven ? 'sm:flex-row-reverse' : ''}`}
                 >
                   {/* Timeline Dot */}
-                  <div className="absolute left-0 sm:left-1/2 w-4 h-4 rounded-full bg-primary ring-4 ring-[#0c0a09] -translate-x-1/2 z-10" />
+                  <div className="absolute left-4 sm:left-1/2 w-4 h-4 rounded-full bg-primary ring-4 ring-[#0c0a09] -translate-x-1/2 z-10" />
 
                   {/* Date (Desktop) */}
                   <div className={`hidden sm:block w-1/2 ${isEven ? 'text-left pl-8' : 'text-right pr-8'}`}>

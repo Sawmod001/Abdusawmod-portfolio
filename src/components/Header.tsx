@@ -104,7 +104,7 @@ export default function Header() {
             <div className="flex md:hidden items-center space-x-2">
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-2 rounded-lg text-gray-300 hover:text-white cursor-pointer"
+                className="flex h-11 w-11 items-center justify-center rounded-lg text-gray-300 hover:text-white cursor-pointer"
                 aria-label="Toggle mobile menu"
                 aria-expanded={isMobileMenuOpen}
                 aria-controls="mobile-nav"

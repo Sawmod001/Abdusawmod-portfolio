@@ -25,7 +25,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-[calc(100vh-4rem)] items-center justify-center overflow-hidden py-20 sm:py-28"
+      className="relative flex min-h-[calc(100svh-4rem)] sm:min-h-[calc(100dvh-4rem)] items-center justify-center overflow-hidden py-20 sm:py-28"
     >
       {/* Sophisticated Dark Background (Aceternity inspired) */}
       <div className="absolute inset-0 pointer-events-none -z-20 bg-[#0c0a09]" />
@@ -56,20 +56,20 @@ export default function Hero() {
             </h1>
 
             <p className="mt-4 font-mono text-base sm:text-xl font-medium text-stone-400">
-              Software Engineer
-              <span className="text-gradient-brand font-semibold"> · Full Stack Developer</span>
+              Software/
+              <span className="text-gradient-brand font-semibold">Full Stack Developer</span>
             </p>
 
             <p className="mt-6 text-lg sm:text-xl leading-relaxed text-gray-400 max-w-2xl font-light">
-              Building reliable, scalable, and useful digital products. Focused on full-stack architecture, secure authentication systems, and practical AI integrations.
+              Building reliable, scalable and useful digital products. Focused on full-stack architecture, secure authentication systems and practical AI integrations.
             </p>
 
             {/* CTAs */}
             <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-              <Magnetic>
+              <Magnetic className="w-full sm:w-auto">
                 <a
                   href="#projects"
-                  className="group relative inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 px-8 py-3.5 text-sm font-semibold text-stone-950 shadow-lg shadow-amber-500/20 overflow-hidden transition-all hover:scale-[1.02] hover:shadow-amber-500/30 active:scale-95"
+                  className="group relative inline-flex w-full sm:w-auto items-center justify-center rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 px-8 py-3.5 text-sm font-semibold text-stone-950 shadow-lg shadow-amber-500/20 overflow-hidden transition-all hover:scale-[1.02] hover:shadow-amber-500/30 active:scale-95"
                 >
                   <span className="absolute inset-0 bg-gray-900/20 opacity-0 group-hover:opacity-100 transition-opacity" />
                   <span className="relative flex items-center justify-center">
@@ -79,11 +79,11 @@ export default function Hero() {
                 </a>
               </Magnetic>
 
-              <Magnetic>
+              <Magnetic className="w-full sm:w-auto">
                 <a
-                  href="/resume.pdf"
-                  download="Abolaji_Abdusawmod_Akande_CV.pdf"
-                  className="inline-flex w-full items-center justify-center rounded-lg border border-gray-700 bg-gray-900/10 backdrop-blur-md px-8 py-3.5 text-sm font-medium text-gray-200 hover:bg-gray-800 transition-all hover:scale-[1.02] active:scale-95"
+                  href="/SAWMOD-RESUME.pdf"
+                  download="SAWMOD-RESUME.pdf"
+                  className="inline-flex w-full sm:w-auto items-center justify-center rounded-lg border border-gray-700 bg-gray-900/10 backdrop-blur-md px-8 py-3.5 text-sm font-medium text-gray-200 hover:bg-gray-800 transition-all hover:scale-[1.02] active:scale-95"
                 >
                   Download CV
                   <Download className="ml-2 h-4 w-4" />
@@ -92,19 +92,19 @@ export default function Hero() {
             </div>
 
             {/* Social Links */}
-            <div className="mt-12 flex items-center gap-6">
-              <a href="mailto:sawmodabolaji@gmail.com" className="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 text-sm font-mono">
-                <Mail className="h-5 w-5" />
-                sawmodabolaji@gmail.com
+            <div className="mt-12 flex flex-wrap items-center gap-4 sm:gap-6">
+              <a href="mailto:sawmodabolaji@gmail.com" className="text-gray-400 hover:text-primary transition-colors flex min-w-0 items-center gap-2 text-sm font-mono break-all sm:break-normal">
+                <Mail className="h-5 w-5 flex-shrink-0" />
+                <span className="min-w-0 break-all">sawmodabolaji@gmail.com</span>
               </a>
-              <div className="h-4 w-px bg-gray-700" />
+              <div className="hidden sm:block h-4 w-px bg-gray-700" />
               {socials.map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`text-gray-400 ${social.color} transition-colors`}
+                  className={`text-gray-400 ${social.color} transition-colors flex-shrink-0`}
                   title={social.name}
                 >
                   {social.icon}

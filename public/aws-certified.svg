@@ -1,0 +1,11 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" rx="12" fill="#1e293b"/>
+  <text x="40" y="60" font-family="Arial, sans-serif" font-size="24" fill="#ffffff" font-weight="400">aws <tspan fill="#ff9900">✔</tspan> certified</text>
+  <text x="40" y="140" font-family="Arial, sans-serif" font-size="38" fill="#ffffff" font-weight="700">Abdusawmod Abolaji</text>
+  <text x="40" y="180" font-family="Arial, sans-serif" font-size="18" fill="#cbd5e1">AWS Certified Cloud Practitioner</text>
+  <rect x="30" y="260" width="740" height="70" rx="4" fill="none" stroke="#ff9900" stroke-width="1.5"/>
+  <text x="50" y="290" font-family="Arial, sans-serif" font-size="13" fill="#ffffff" font-weight="700">VALIDATION NUMBER: <tspan font-weight="400">bb8f90d8690c4f40bc12966b01a1a61b</tspan></text>
+  <text x="50" y="315" font-family="Arial, sans-serif" font-size="13" fill="#ffffff" font-weight="700">VALIDATE AT: <tspan fill="#ff9900" text-decoration="underline">https://aws.amazon.com/verification</tspan></text>
+  <text x="40" y="370" font-family="Arial, sans-serif" font-size="13" fill="#e2e8f0"><tspan font-weight="700">Issue Date:</tspan> September 9, 2026</text>
+  <text x="40" y="395" font-family="Arial, sans-serif" font-size="13" fill="#e2e8f0"><tspan font-weight="700">Expiration Date:</tspan> September 9, 2029</text>
+</svg>

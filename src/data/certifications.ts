@@ -7,6 +7,12 @@ export interface Certification {
 
 export const certificationsData: Certification[] = [
   {
+    id: 'aws-cp',
+    title: 'AWS Certified Cloud Practitioner',
+    issuer: 'Amazon Web Services',
+    description: 'Validation: bb8f90d8690c4f40bc12966b01a1a61b · Validate at aws.amazon.com/verification · Issued Sep 9, 2026 · Expires Sep 9, 2029'
+  },
+  {
     id: 'millennium-fellow',
     title: 'Global Millennium Fellow \'26',
     issuer: 'United Nations Academic Impact & Millennium Campus Network',

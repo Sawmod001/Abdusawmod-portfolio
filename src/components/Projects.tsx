@@ -33,6 +33,11 @@ const categoryStyles: Record<Project['category'], { chip: string; gradient: stri
     gradient: 'from-fuchsia-500/20 via-pink-500/10 to-transparent',
     glow: 'group-hover:shadow-fuchsia-500/10',
   },
+  Frontend: {
+    chip: 'bg-violet-500/10 text-violet-300 border-violet-500/20',
+    gradient: 'from-violet-500/20 via-purple-500/10 to-transparent',
+    glow: 'group-hover:shadow-violet-500/10',
+  },
   Other: {
     chip: 'bg-slate-500/10 text-slate-300 border-slate-500/20',
     gradient: 'from-slate-500/20 via-gray-500/10 to-transparent',

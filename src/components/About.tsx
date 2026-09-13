@@ -47,23 +47,40 @@ export default function About() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          {/* Bio */}
+          {/* Bio — Stylish Pro Typography */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="prose prose-lg prose-invert text-gray-400"
+            className="relative"
           >
-            <p>
-              I&apos;m a software engineer specializing in full-stack development with a strong focus on backend systems, API architecture and database design.
-            </p>
-            <p>
-              I build reliable products that solve real problems, architecting end-to-end marketplaces, engineering secure payment workflows and applying AI to healthcare triage. Solving problems is what pulls me into a project in the first place and I care as much about the code being clean and production-ready as I do about who it actually serves.
-            </p>
-            <p>
-              I&apos;m also a social impact advocate at heart. I love volunteering and I believe talent built anywhere deserves a shot at global standards. I&apos;ve spent the last two years building, leading and turning local potential into global-standard quality.
-            </p>
+            {/* subtle accent line */}
+            <div className="absolute -left-4 top-0 bottom-0 hidden lg:block w-px bg-gradient-to-b from-amber-500/40 via-amber-500/10 to-transparent" />
+            <div className="space-y-6">
+              {/* Eyebrow + quote mark */}
+              <div className="flex items-center gap-3">
+                <span className="text-[11px] font-mono tracking-[0.2em] text-amber-300 uppercase">Executive Summary</span>
+                <span className="h-px flex-1 bg-gradient-to-r from-amber-500/30 to-transparent" />
+              </div>
+
+              <div className="relative">
+                <span className="absolute -left-2 -top-6 select-none font-serif text-6xl leading-none text-amber-500/20" aria-hidden>“</span>
+                <p className="relative font-serif text-[17px] sm:text-[19px] leading-[1.85] tracking-[-0.015em] text-stone-200 font-light antialiased">
+                  Full stack software developer with <span className="font-medium text-white">2+ years</span> of experience across <span className="font-medium text-white">frontend, backend, cloud infrastructure</span> and <span className="font-medium text-white">database design</span> building interfaces in <span className="bg-gradient-to-r from-amber-300 to-orange-400 bg-clip-text text-transparent font-semibold">React/Next.js</span>, APIs in <span className="bg-gradient-to-r from-amber-300 to-orange-400 bg-clip-text text-transparent font-semibold">Node.js/Express</span> and deploying on <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/20 bg-amber-500/10 px-2.5 py-0.5 text-xs font-sans font-semibold tracking-wide text-amber-300 align-middle">AWS <span className="text-amber-300">◆</span> Certified Cloud Practitioner</span>.
+                </p>
+              </div>
+
+              <p className="font-sans text-[15.5px] sm:text-[16px] leading-[1.9] tracking-[-0.01em] text-gray-300/90 font-light">
+                I build <span className="font-medium text-white">reliable, production-ready products end-to-end</span>: architecting and engineering system, secure payment, auth workflows and so on Also <em className="font-serif text-stone-100 not-italic font-normal">love creativity and problem solving</em>.
+              </p>
+
+              <div className="relative rounded-xl border border-amber-500/15 bg-gradient-to-br from-amber-500/5 via-transparent to-orange-500/5 p-4 sm:p-5">
+                <p className="font-serif text-[15px] sm:text-[16px] leading-relaxed tracking-[-0.01em] text-stone-300 font-light italic">
+                  “Social impact advocate who believes <span className="not-italic font-medium text-white">talent built anywhere</span> deserves a shot at global standards.”
+                </p>
+              </div>
+            </div>
           </motion.div>
 
           {/* Identity card */}

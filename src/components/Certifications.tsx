@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { certificationsData } from '@/data/certifications';
 import { leadershipData } from '@/data/leadership';
 import TiltCard from '@/components/TiltCard';
@@ -40,8 +41,44 @@ export default function Certifications() {
             <div className="h-1 w-12 bg-primary mt-3 rounded-full" />
           </motion.div>
 
+          {/* Featured AWS Certified Cloud Practitioner - visual badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-6 overflow-hidden rounded-2xl border border-amber-500/30 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 shadow-lg shadow-amber-500/10"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
+              <div className="lg:col-span-3 relative bg-[#1e293b] p-0 flex items-center justify-center min-h-[220px]">
+                <Image
+                  src="/aws-certified.svg"
+                  alt="AWS Certified Cloud Practitioner - Abdusawmod Abolaji"
+                  width={800}
+                  height={450}
+                  className="w-full h-auto object-contain"
+                  priority={false}
+                />
+              </div>
+              <div className="lg:col-span-2 p-6 sm:p-7 flex flex-col justify-center bg-gradient-to-br from-amber-500/10 via-transparent to-orange-500/10">
+                <span className="inline-flex w-fit items-center rounded-full border border-amber-500/20 bg-amber-500/10 px-2.5 py-1 text-[10px] font-mono font-medium tracking-wider text-amber-300">★ CERTIFIED</span>
+                <h4 className="mt-3 text-lg font-bold text-white">AWS Certified Cloud Practitioner</h4>
+                <p className="mt-1 text-xs font-medium tracking-widest text-amber-300">AMAZON WEB SERVICES</p>
+                <div className="mt-4 space-y-2 rounded-xl border border-amber-500/20 bg-slate-900/60 p-3 overflow-hidden">
+                  <p className="font-mono text-[11px] leading-relaxed text-gray-300 break-all"><span className="font-semibold text-white">Validation:</span> bb8f90d8690c4f40bc12966b01a1a61b</p>
+                  <p className="font-mono text-[11px] text-gray-300 break-all"><span className="font-semibold text-white">Validate at:</span> <a href="https://aws.amazon.com/verification" target="_blank" rel="noopener noreferrer" className="text-amber-300 hover:text-amber-200 underline underline-offset-2 break-all">aws.amazon.com/verification</a></p>
+                  <div className="flex flex-wrap gap-3 pt-1 font-mono text-[11px] text-gray-400">
+                    <span><span className="text-gray-200 font-semibold">Issued:</span> Sep 9, 2026</span>
+                    <span><span className="text-gray-200 font-semibold">Expires:</span> Sep 9, 2029</span>
+                  </div>
+                </div>
+                <p className="mt-3 text-xs leading-relaxed text-gray-400">Abdusawmod Abolaji — globally validated by AWS Certification.</p>
+              </div>
+            </div>
+          </motion.div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {certificationsData.map((cert, index) => (
+            {certificationsData.filter(c => c.id !== 'aws-cp').map((cert, index) => (
               <TiltCard key={cert.id} max={6} className="h-full">
                 <motion.div
                   initial={{ opacity: 0, y: 16 }}

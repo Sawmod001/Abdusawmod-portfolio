@@ -9,7 +9,7 @@ export interface Experience {
 export const experienceData: Experience[] = [
   {
     id: 'hakeela',
-    role: 'Full Stack Developer Intern',
+    role: 'Full Stack Developer',
     company: 'Hakeela.org (Remote)',
     date: 'Nov 2025 – Mar 2026',
     responsibilities: [
@@ -19,7 +19,7 @@ export const experienceData: Experience[] = [
   },
   {
     id: 'awibi',
-    role: 'Backend Developer Intern',
+    role: 'Backend Developer',
     company: 'AWIBI MedTech',
     date: 'Mar 2025 – Jan 2026',
     responsibilities: [
