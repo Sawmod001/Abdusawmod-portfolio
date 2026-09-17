@@ -9,6 +9,14 @@ export interface LeadershipRole {
 
 export const leadershipData: LeadershipRole[] = [
   {
+    id: 'nakss-president-elect',
+    role: 'President-elect',
+    organization: 'National Association of Kwara State Students (NAKSS), University of Ilorin Chapter',
+    date: '2026/2027',
+    description: 'Elected to lead the umbrella body of Kwara State students at Unilorin — overseeing welfare, representation, and community programmes.',
+    highlights: ['President-elect for 2026/2027 academic session', 'Mandate: student welfare, advocacy, and Kwara community development on campus'],
+  },
+  {
     id: 'insu-sec',
     role: 'General Secretary',
     organization: 'INSU UNILORIN',

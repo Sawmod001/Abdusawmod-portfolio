@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, ChevronDown } from 'lucide-react';
+import Image from 'next/image';
 import { GithubIcon } from '@/components/icons';
 import TiltCard from '@/components/TiltCard';
 import { projectsData, type Project } from '@/data/projects';
@@ -47,6 +48,7 @@ const categoryStyles: Record<Project['category'], { chip: string; gradient: stri
 
 export default function Projects() {
   const [expanded, setExpanded] = useState(false);
+  const [expandedCards, setExpandedCards] = useState<Record<string, boolean>>({});
   const flagshipProject = projectsData.find((p) => p.id === 'clockhost');
   const selectedProjects = projectsData.filter((p) => p.id !== 'clockhost');
 
@@ -239,22 +241,43 @@ export default function Projects() {
                 >
                 {/* Preview banner */}
                 <div
-                  className={`relative h-32 flex-shrink-0 overflow-hidden bg-gradient-to-br ${style.gradient} border-b border-gray-800/60`}
+                  className={`relative h-36 flex-shrink-0 overflow-hidden border-b border-gray-800/60 ${project.id === 'nairaguard' ? 'bg-black' : `bg-gradient-to-br ${style.gradient}`}`}
                 >
-                  <div className="absolute inset-0 bg-[radial-gradient(rgba(120,120,140,0.15)_1px,transparent_1px)] [background-size:16px_16px] opacity-40" />
-                  <span className="absolute left-4 top-4 font-mono text-3xl font-bold text-white/10 group-hover:text-primary/25 transition-colors">
-                    {String(index + 2).padStart(2, '0')}
-                  </span>
-                  <div className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-2">
-                    <span className={`rounded-full border px-2.5 py-1 text-[10px] font-mono font-medium ${style.chip}`}>
-                      {project.category}
-                    </span>
-                    {project.inProgress && (
-                      <span className="rounded-full bg-orange-900/30 px-2.5 py-1 text-[10px] uppercase tracking-wider text-orange-400">
-                        In Progress
+                  {project.id === 'nairaguard' ? (
+                    <>
+                      <Image
+                        src="/nairaguard-preview.png"
+                        alt="NairaGuard — AWS FinOps, built with Naira in mind"
+                        fill
+                        className="object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                      <span className="absolute left-3 top-3 font-mono text-2xl font-bold text-white/90 drop-shadow">02</span>
+                      <div className="absolute inset-x-3 bottom-3 flex items-center justify-between gap-2">
+                        <span className={`rounded-full border px-2.5 py-1 text-[10px] font-mono font-medium backdrop-blur bg-black/40 ${style.chip}`}>
+                          {project.category}
+                        </span>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="absolute inset-0 bg-[radial-gradient(rgba(120,120,140,0.15)_1px,transparent_1px)] [background-size:16px_16px] opacity-40" />
+                      <span className="absolute left-4 top-4 font-mono text-3xl font-bold text-white/10 group-hover:text-primary/25 transition-colors">
+                        {String(index + 2).padStart(2, '0')}
                       </span>
-                    )}
-                  </div>
+                      <div className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-2">
+                        <span className={`rounded-full border px-2.5 py-1 text-[10px] font-mono font-medium ${style.chip}`}>
+                          {project.category}
+                        </span>
+                        {project.inProgress && (
+                          <span className="rounded-full bg-orange-900/30 px-2.5 py-1 text-[10px] uppercase tracking-wider text-orange-400">
+                            In Progress
+                          </span>
+                        )}
+                      </div>
+                    </>
+                  )}
                 </div>
 
                 {/* Card body */}
@@ -263,9 +286,59 @@ export default function Projects() {
                     {project.title}
                   </h4>
 
-                  <p className="mt-3 flex-grow text-sm leading-relaxed text-gray-400">
+                  <p className="mt-3 text-sm leading-relaxed text-gray-400">
                     {project.description}
                   </p>
+
+                  {project.highlights && project.highlights.length > 0 && (
+                    <ul className="mt-4 space-y-2">
+                      {project.highlights.slice(0, 3).map((point) => (
+                        <li key={point} className="flex items-start gap-2 text-xs leading-relaxed text-gray-300">
+                          <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-primary" />
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {project.details && project.details.length > 0 && (
+                    <div className="mt-4">
+                      <button
+                        onClick={() => setExpandedCards((prev) => ({ ...prev, [project.id]: !prev[project.id] }))}
+                        className="flex items-center gap-1.5 text-xs font-medium text-primary hover:text-amber-300 transition-colors cursor-pointer"
+                      >
+                        {expandedCards[project.id] ? 'Show Less' : 'Learn More'}
+                        <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-300 ${expandedCards[project.id] ? 'rotate-180' : ''}`} />
+                      </button>
+                      <AnimatePresence>
+                        {expandedCards[project.id] && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3, ease: 'easeInOut' }}
+                            className="overflow-hidden"
+                          >
+                            <div className="mt-3 space-y-4 border-t border-gray-800 pt-3">
+                              {project.details.map((section) => (
+                                <div key={section.label}>
+                                  <h5 className="text-xs font-semibold text-white mb-1.5">{section.label}</h5>
+                                  <ul className="space-y-1">
+                                    {section.items.map((item) => (
+                                      <li key={item} className="flex items-start gap-1.5 text-[11px] leading-relaxed text-gray-400">
+                                        <span className="mt-1 h-1 w-1 flex-shrink-0 rounded-full bg-gray-600" />
+                                        {item}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  )}
 
                   <div className="mt-5 flex flex-wrap gap-2">
                     {project.tags.slice(0, 4).map((tag) => (
