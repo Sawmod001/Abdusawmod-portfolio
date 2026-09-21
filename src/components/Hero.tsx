@@ -29,28 +29,23 @@ export default function Hero() {
     >
       {/* Sophisticated Dark Background (Aceternity inspired) */}
       <div className="absolute inset-0 pointer-events-none -z-20 bg-[#0c0a09]" />
-      
+
       {/* Very subtle noise/grid */}
       <div className="absolute inset-0 pointer-events-none -z-10 bg-grid-pattern opacity-50 mix-blend-overlay" />
-      
+
       {/* Ambient gradient spotlight */}
       <div className="absolute top-0 right-0 -z-10 h-[500px] w-[500px] rounded-full bg-primary/10 blur-[110px] translate-x-1/3 -translate-y-1/3" />
       <div className="absolute bottom-0 left-0 -z-10 h-[400px] w-[400px] rounded-full bg-accent/10 blur-[110px] -translate-x-1/3 translate-y-1/3" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="flex flex-col items-start justify-center max-w-3xl">
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="w-full"
           >
-            <div className="inline-flex items-center space-x-2 rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-xs font-mono font-medium text-amber-300 mb-10 shadow-sm shadow-primary/10">
-              <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
-              <span>Available for new opportunities</span>
-            </div>
-
             <h1 aria-label="Abolaji Abdusawmod Akande" className="mb-6">
               <AnimatedName />
             </h1>
@@ -115,16 +110,16 @@ export default function Hero() {
 
         </div>
       </div>
-      
+
       {/* Scroll indicator */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center"
       >
         <span className="text-[10px] font-mono uppercase tracking-widest text-gray-500 mb-2">Scroll</span>
-        <motion.div 
+        <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
           className="h-10 w-6 rounded-full border border-gray-700 flex justify-center p-1"

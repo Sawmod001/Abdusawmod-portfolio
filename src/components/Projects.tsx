@@ -163,7 +163,7 @@ export default function Projects() {
                     className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 px-5 py-2.5 text-sm font-semibold text-stone-950 shadow-sm shadow-amber-500/20 transition-all hover:shadow-amber-500/30 hover:brightness-105"
                   >
                     <ExternalLink className="h-4 w-4" />
-                    Live Demo
+                    Live
                   </a>
                 </div>
               </div>
@@ -239,152 +239,152 @@ export default function Projects() {
                   transition={{ duration: 0.5, delay: index * 0.08 }}
                   className={`group flex h-full flex-col overflow-hidden rounded-2xl border border-gray-800 bg-gray-900/40 transition-colors duration-300 hover:border-primary/40 hover:shadow-lg ${style.glow}`}
                 >
-                {/* Preview banner */}
-                <div
-                  className={`relative h-36 flex-shrink-0 overflow-hidden border-b border-gray-800/60 ${project.id === 'nairaguard' ? 'bg-black' : `bg-gradient-to-br ${style.gradient}`}`}
-                >
-                  {project.id === 'nairaguard' ? (
-                    <>
-                      <Image
-                        src="/nairaguard-preview.png"
-                        alt="NairaGuard — AWS FinOps, built with Naira in mind"
-                        fill
-                        className="object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity duration-300"
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                      <span className="absolute left-3 top-3 font-mono text-2xl font-bold text-white/90 drop-shadow">02</span>
-                      <div className="absolute inset-x-3 bottom-3 flex items-center justify-between gap-2">
-                        <span className={`rounded-full border px-2.5 py-1 text-[10px] font-mono font-medium backdrop-blur bg-black/40 ${style.chip}`}>
-                          {project.category}
-                        </span>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <div className="absolute inset-0 bg-[radial-gradient(rgba(120,120,140,0.15)_1px,transparent_1px)] [background-size:16px_16px] opacity-40" />
-                      <span className="absolute left-4 top-4 font-mono text-3xl font-bold text-white/10 group-hover:text-primary/25 transition-colors">
-                        {String(index + 2).padStart(2, '0')}
-                      </span>
-                      <div className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-2">
-                        <span className={`rounded-full border px-2.5 py-1 text-[10px] font-mono font-medium ${style.chip}`}>
-                          {project.category}
-                        </span>
-                        {project.inProgress && (
-                          <span className="rounded-full bg-orange-900/30 px-2.5 py-1 text-[10px] uppercase tracking-wider text-orange-400">
-                            In Progress
+                  {/* Preview banner */}
+                  <div
+                    className={`relative h-36 flex-shrink-0 overflow-hidden border-b border-gray-800/60 ${project.id === 'nairaguard' || project.id === 'hakeela' ? 'bg-black' : `bg-gradient-to-br ${style.gradient}`}`}
+                  >
+                    {project.id === 'nairaguard' || project.id === 'hakeela' ? (
+                      <>
+                        <Image
+                          src="/nairaguard-preview.png"
+                          alt={project.id === 'nairaguard' ? 'NairaGuard — AWS FinOps, built with Naira in mind' : 'Hakeela — AI + empathy for inclusive edtech'}
+                          fill
+                          className="object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                        <span className="absolute left-3 top-3 font-mono text-2xl font-bold text-white/90 drop-shadow">{project.id === 'nairaguard' ? '02' : '03'}</span>
+                        <div className="absolute inset-x-3 bottom-3 flex items-center justify-between gap-2">
+                          <span className={`rounded-full border px-2.5 py-1 text-[10px] font-mono font-medium backdrop-blur bg-black/40 ${style.chip}`}>
+                            {project.category}
                           </span>
-                        )}
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="absolute inset-0 bg-[radial-gradient(rgba(120,120,140,0.15)_1px,transparent_1px)] [background-size:16px_16px] opacity-40" />
+                        <span className="absolute left-4 top-4 font-mono text-3xl font-bold text-white/10 group-hover:text-primary/25 transition-colors">
+                          {String(index + 2).padStart(2, '0')}
+                        </span>
+                        <div className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-2">
+                          <span className={`rounded-full border px-2.5 py-1 text-[10px] font-mono font-medium ${style.chip}`}>
+                            {project.category}
+                          </span>
+                          {project.inProgress && (
+                            <span className="rounded-full bg-orange-900/30 px-2.5 py-1 text-[10px] uppercase tracking-wider text-orange-400">
+                              In Progress
+                            </span>
+                          )}
+                        </div>
+                      </>
+                    )}
+                  </div>
+
+                  {/* Card body */}
+                  <div className="flex flex-1 flex-col p-6">
+                    <h4 className="text-lg font-bold text-white transition-colors group-hover:text-primary group-hover:text-amber-300">
+                      {project.title}
+                    </h4>
+
+                    <p className="mt-3 text-sm leading-relaxed text-gray-400">
+                      {project.description}
+                    </p>
+
+                    {project.highlights && project.highlights.length > 0 && (
+                      <ul className="mt-4 space-y-2">
+                        {project.highlights.slice(0, 3).map((point) => (
+                          <li key={point} className="flex items-start gap-2 text-xs leading-relaxed text-gray-300">
+                            <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-primary" />
+                            {point}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
+                    {project.details && project.details.length > 0 && (
+                      <div className="mt-4">
+                        <button
+                          onClick={() => setExpandedCards((prev) => ({ ...prev, [project.id]: !prev[project.id] }))}
+                          className="flex items-center gap-1.5 text-xs font-medium text-primary hover:text-amber-300 transition-colors cursor-pointer"
+                        >
+                          {expandedCards[project.id] ? 'Show Less' : 'Learn More'}
+                          <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-300 ${expandedCards[project.id] ? 'rotate-180' : ''}`} />
+                        </button>
+                        <AnimatePresence>
+                          {expandedCards[project.id] && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: 'auto', opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.3, ease: 'easeInOut' }}
+                              className="overflow-hidden"
+                            >
+                              <div className="mt-3 space-y-4 border-t border-gray-800 pt-3">
+                                {project.details.map((section) => (
+                                  <div key={section.label}>
+                                    <h5 className="text-xs font-semibold text-white mb-1.5">{section.label}</h5>
+                                    <ul className="space-y-1">
+                                      {section.items.map((item) => (
+                                        <li key={item} className="flex items-start gap-1.5 text-[11px] leading-relaxed text-gray-400">
+                                          <span className="mt-1 h-1 w-1 flex-shrink-0 rounded-full bg-gray-600" />
+                                          {item}
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </div>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
                       </div>
-                    </>
-                  )}
-                </div>
+                    )}
 
-                {/* Card body */}
-                <div className="flex flex-1 flex-col p-6">
-                  <h4 className="text-lg font-bold text-white transition-colors group-hover:text-primary group-hover:text-amber-300">
-                    {project.title}
-                  </h4>
-
-                  <p className="mt-3 text-sm leading-relaxed text-gray-400">
-                    {project.description}
-                  </p>
-
-                  {project.highlights && project.highlights.length > 0 && (
-                    <ul className="mt-4 space-y-2">
-                      {project.highlights.slice(0, 3).map((point) => (
-                        <li key={point} className="flex items-start gap-2 text-xs leading-relaxed text-gray-300">
-                          <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-primary" />
-                          {point}
-                        </li>
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {project.tags.slice(0, 4).map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-md bg-gray-800 px-2 py-1 font-mono text-[11px] text-gray-400"
+                        >
+                          {tag}
+                        </span>
                       ))}
-                    </ul>
-                  )}
-
-                  {project.details && project.details.length > 0 && (
-                    <div className="mt-4">
-                      <button
-                        onClick={() => setExpandedCards((prev) => ({ ...prev, [project.id]: !prev[project.id] }))}
-                        className="flex items-center gap-1.5 text-xs font-medium text-primary hover:text-amber-300 transition-colors cursor-pointer"
-                      >
-                        {expandedCards[project.id] ? 'Show Less' : 'Learn More'}
-                        <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-300 ${expandedCards[project.id] ? 'rotate-180' : ''}`} />
-                      </button>
-                      <AnimatePresence>
-                        {expandedCards[project.id] && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: 'auto', opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.3, ease: 'easeInOut' }}
-                            className="overflow-hidden"
-                          >
-                            <div className="mt-3 space-y-4 border-t border-gray-800 pt-3">
-                              {project.details.map((section) => (
-                                <div key={section.label}>
-                                  <h5 className="text-xs font-semibold text-white mb-1.5">{section.label}</h5>
-                                  <ul className="space-y-1">
-                                    {section.items.map((item) => (
-                                      <li key={item} className="flex items-start gap-1.5 text-[11px] leading-relaxed text-gray-400">
-                                        <span className="mt-1 h-1 w-1 flex-shrink-0 rounded-full bg-gray-600" />
-                                        {item}
-                                      </li>
-                                    ))}
-                                  </ul>
-                                </div>
-                              ))}
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
+                      {project.tags.length > 4 && (
+                        <span className="rounded-md bg-gray-800 px-2 py-1 font-mono text-[11px] text-gray-400">
+                          +{project.tags.length - 4}
+                        </span>
+                      )}
                     </div>
-                  )}
 
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {project.tags.slice(0, 4).map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-md bg-gray-800 px-2 py-1 font-mono text-[11px] text-gray-400"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                    {project.tags.length > 4 && (
-                      <span className="rounded-md bg-gray-800 px-2 py-1 font-mono text-[11px] text-gray-400">
-                        +{project.tags.length - 4}
-                      </span>
-                    )}
+                    <div className="mt-6 flex items-center gap-3 border-t border-gray-800 pt-4">
+                      {project.githubUrl && !project.liveUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 rounded-lg border border-gray-700 px-3.5 py-2 text-xs font-medium text-gray-300 transition-colors hover:border-primary/40 hover:text-primary hover:text-amber-300"
+                        >
+                          <GithubIcon className="h-4 w-4" />
+                          Code
+                        </a>
+                      )}
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 px-3.5 py-2 text-xs font-semibold text-stone-950 shadow-sm shadow-amber-500/20 transition-all hover:brightness-105"
+                        >
+                          <ExternalLink className="h-3.5 w-3.5" />
+                          Live
+                        </a>
+                      )}
+                    </div>
                   </div>
-
-                  <div className="mt-6 flex items-center gap-3 border-t border-gray-800 pt-4">
-                    {project.githubUrl && (
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-lg border border-gray-700 px-3.5 py-2 text-xs font-medium text-gray-300 transition-colors hover:border-primary/40 hover:text-primary hover:text-amber-300"
-                      >
-                        <GithubIcon className="h-4 w-4" />
-                        Code
-                      </a>
-                    )}
-                    {project.liveUrl && (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 px-3.5 py-2 text-xs font-semibold text-stone-950 shadow-sm shadow-amber-500/20 transition-all hover:brightness-105"
-                      >
-                        <ExternalLink className="h-3.5 w-3.5" />
-                        Live Demo
-                      </a>
-                    )}
-                  </div>
-                </div>
-                  </motion.article>
-                </TiltCard>
-              );
-            })}
+                </motion.article>
+              </TiltCard>
+            );
+          })}
         </div>
       </div>
     </section>
