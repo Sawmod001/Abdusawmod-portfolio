@@ -246,7 +246,7 @@ export default function Projects() {
                     {project.id === 'nairaguard' || project.id === 'hakeela' ? (
                       <>
                         <Image
-                          src="/nairaguard-preview.png"
+                          src={project.id === 'nairaguard' ? '/nairaguard-preview.png' : '/photo_2026-09-21_11-59-31.jpg'}
                           alt={project.id === 'nairaguard' ? 'NairaGuard — AWS FinOps, built with Naira in mind' : 'Hakeela — AI + empathy for inclusive edtech'}
                           fill
                           className="object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity duration-300"
