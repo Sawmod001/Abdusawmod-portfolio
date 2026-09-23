@@ -16,8 +16,8 @@ export default function AmbientBackground() {
 
   useEffect(() => {
     if (reduce) return;
-    if (window.matchMedia('(pointer: coarse)').matches) return;
-    if (window.matchMedia('(max-width: 1024px)').matches) return;
+    const isCoarse = window.matchMedia('(pointer: coarse)').matches;
+    const isMobile = window.matchMedia('(max-width: 1024px)').matches;
 
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -28,7 +28,7 @@ export default function AmbientBackground() {
     let H = 0;
     let raf = 0;
     let lastFrame = 0;
-    const FRAME_INTERVAL = 48; // ~20fps - very little faster
+    const FRAME_INTERVAL = isMobile ? 70 : 42;
     let running = true;
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -38,11 +38,11 @@ export default function AmbientBackground() {
     let holdTimer = 0;
     let fadeTimer = 0;
     let waitTimer = 0;
-    const HOLD_DURATION = 180;
+    const HOLD_DURATION = isMobile ? 140 : 180;
     const FADE_DURATION = 90;
     const WAIT_DURATION = 70;
-    const MAX_DEPTH = 7;
-    const GROWTH_SPEED_BASE = 0.014;
+    const MAX_DEPTH = isMobile ? 6 : 7;
+    const GROWTH_SPEED_BASE = 0.016;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let particles: any[] = [];
     let particleSprite: HTMLCanvasElement | null = null;
@@ -458,7 +458,7 @@ export default function AmbientBackground() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 hidden overflow-hidden lg:block"
+      className="pointer-events-none absolute inset-0 overflow-hidden block"
       style={{
         maskImage: 'linear-gradient(to bottom, black 72%, transparent 100%)',
         WebkitMaskImage: 'linear-gradient(to bottom, black 72%, transparent 100%)',
@@ -466,7 +466,7 @@ export default function AmbientBackground() {
     >
       <canvas
         ref={canvasRef}
-        className="h-full w-full opacity-[0.32]"
+        className="h-full w-full opacity-[0.22] sm:opacity-[0.28] lg:opacity-[0.32]"
         style={{ width: '100%', height: '100%', display: 'block' }}
       />
       {/* extra vignette + warm wash to tie to page palette */}

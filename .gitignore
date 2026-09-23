@@ -42,3 +42,10 @@ next-env.d.ts
 
 .vercel
 .env*
+
+# impeccable + docs hidden
+.claude/
+.cursor/
+.codex/
+PRODUCT.md
+.impeccable/

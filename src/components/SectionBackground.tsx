@@ -50,7 +50,7 @@ export default function SectionBackground({ variant, id }: { variant: Variant; i
     };
   }, [id]);
 
-  const particles = Array.from({ length: variant === 'projects' ? 22 : variant === 'about' ? 18 : 14 }, (_, i) => i);
+  const particles = Array.from({ length: variant === 'projects' ? 32 : variant === 'about' ? 28 : 22 }, (_, i) => i);
 
   return (
     <div ref={ref} aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden" style={{ '--mx': '0px', '--my': '0px' } as React.CSSProperties}>
@@ -67,15 +67,15 @@ export default function SectionBackground({ variant, id }: { variant: Variant; i
         {particles.map((i) => (
           <span
             key={i}
-            className="absolute rounded-full bg-amber-400/40"
+            className="absolute rounded-full bg-amber-400/45"
             style={{
-              left: `${8 + (i * 67) % 84}%`,
-              top: `${12 + (i * 41) % 78}%`,
-              width: `${2 + (i % 3) * 0.9}px`,
-              height: `${2 + (i % 3) * 0.9}px`,
-              opacity: 0.28 + (i % 4) * 0.07,
-              animation: `drift-a ${12 + (i % 5) * 2.2}s ease-in-out infinite`,
-              animationDelay: `${i * 0.45}s`,
+              left: `${6 + (i * 67) % 86}%`,
+              top: `${10 + (i * 41) % 80}%`,
+              width: `${2.2 + (i % 3) * 1}px`,
+              height: `${2.2 + (i % 3) * 1}px`,
+              opacity: 0.32 + (i % 4) * 0.08,
+              animation: `drift-a ${8 + (i % 5) * 1.6}s ease-in-out infinite, particle-collide ${6 + (i % 4) * 1.2}s ease-in-out infinite`,
+              animationDelay: `${i * 0.32}s, ${i * 0.28}s`,
             }}
           />
         ))}

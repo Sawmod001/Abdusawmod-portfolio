@@ -56,8 +56,8 @@ export default function Hero() {
             <p className="mt-5 font-mono text-sm sm:text-[15px] font-medium tracking-wide text-stone-400">
               Software / <span className="text-gradient-brand font-semibold">Full Stack Developer</span>
             </p>
-            <p className="mt-6 max-w-2xl font-serif text-[18px] sm:text-[19px] leading-[1.75] tracking-[-0.015em] text-stone-300/90 font-light">
-              Building <span className="font-medium text-white">reliable, scalable</span> and useful digital products, full-stack architecture, secure auth & payments, and practical AI. I ship end-to-end.
+            <p className="mt-6 max-w-2xl font-sans text-[16px] sm:text-[17px] leading-relaxed text-stone-400">
+              Focused on practical engineering that ships.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
