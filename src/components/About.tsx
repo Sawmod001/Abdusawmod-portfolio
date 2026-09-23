@@ -22,7 +22,6 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-100px' }} transition={{ duration: 0.6 }} className="mb-12">
           <h2 className="font-display text-[clamp(1.9rem,5vw,2.8rem)] font-semibold leading-none tracking-tight text-white uppercase" style={{ fontFamily: 'var(--font-teko)' }}>About</h2>
-          <p className="mt-3 max-w-[62ch] font-sans text-[16px] leading-relaxed text-stone-400">Engineer who owns the whole build, schema to payment to deploy.</p>
           <div className="mt-5 h-px w-16 bg-amber-400/60" />
         </motion.div>
 
@@ -31,7 +30,7 @@ export default function About() {
             <div className="absolute -left-4 top-0 bottom-0 hidden lg:block w-px bg-gradient-to-b from-amber-400/30 via-white/5 to-transparent" />
             <div className="space-y-6 max-w-[68ch]">
               <p className="font-sans text-[16.5px] sm:text-[18px] leading-[1.85] tracking-[-0.01em] text-stone-100 font-normal antialiased">
-                Full stack software developer with 2+ years of experience across frontend, backend, cloud infrastructure and database design building interfaces in <span className="font-medium text-amber-300">React/Next.js</span>, APIs in <span className="font-medium text-amber-300">Node.js/Express</span> and deploying on AWS <span className="inline-flex items-center rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-0.5 font-mono text-xs font-medium text-amber-300">(Certified Cloud Practitioner)</span>. I build reliable, production-ready products end to end: architecting marketplaces and FinOps tools, engineering secure payment and auth workflows, and love problem solving.
+                Full stack software developer with 2+ years of experience across frontend, backend, cloud infrastructure and database design building interfaces in <span className="font-medium text-amber-300">React/Next.js</span>, APIs in <span className="font-medium text-amber-300">Node.js/Express</span> and deploying on AWS <span className="inline-flex items-center rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-0.5 font-mono text-xs font-medium tracking-widest text-amber-300">CERTIFIED CLOUD PRACTITIONER</span>. I build reliable, production-ready products end to end: architecting marketplaces and FinOps tools, engineering secure payment and auth workflows, and love problem solving.
               </p>
               <div className="rounded-[14px] border border-white/10 bg-white/[0.03] p-4 shadow-[0_6px_18px_rgba(0,0,0,0.22)]">
                 <p className="font-sans text-[14.5px] leading-relaxed text-stone-300 font-medium">Social impact advocate who believes talent built anywhere deserves a shot at global standards.</p>
