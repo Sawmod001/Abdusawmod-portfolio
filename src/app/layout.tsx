@@ -1,5 +1,5 @@
-import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
+﻿import type { Metadata, Viewport } from "next";
+import { Teko, Cormorant_Garamond, Instrument_Sans, JetBrains_Mono } from "next/font/google";
 import { MotionConfig } from "framer-motion";
 import "./globals.css";
 
@@ -9,27 +9,36 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Rare premium system: Teko (display condensed / engineer), Cormorant Garamond (editorial serif), Instrument Sans (body), JetBrains Mono (mono)
+const teko = Teko({
+  variable: "--font-teko",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const instrumentSans = Instrument_Sans({
+  variable: "--font-instrument-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://abdusawmod-portfolio.vercel.app"),
   title: {
-    default: "Abolaji Abdusawmod Akande — Software Engineer | Full Stack Developer",
-    template: "%s — Abolaji Abdusawmod Akande",
+    default: "Abolaji Abdusawmod Akande, Software Engineer | Full Stack Developer",
+    template: "%s, Abolaji Abdusawmod Akande",
   },
   description: "Professional portfolio of Abolaji Abdusawmod Akande, a Software Engineer and Full Stack Developer specializing in building reliable, scalable, and useful digital products.",
   keywords: [
@@ -56,12 +65,12 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://abdusawmod-portfolio.vercel.app",
     siteName: "Abolaji Akande Portfolio",
-    title: "Abolaji Abdusawmod Akande — Software Engineer | Full Stack Developer",
+    title: "Abolaji Abdusawmod Akande, Software Engineer | Full Stack Developer",
     description: "Building reliable, scalable, and useful digital products.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Abolaji Abdusawmod Akande — Software Engineer | Full Stack Developer",
+    title: "Abolaji Abdusawmod Akande, Software Engineer | Full Stack Developer",
     description: "Building reliable, scalable, and useful digital products.",
     creator: "@Abolajisawmod",
   },
@@ -75,7 +84,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} h-full scroll-smooth antialiased`}
+      className={`${teko.variable} ${cormorant.variable} ${instrumentSans.variable} ${jetbrainsMono.variable} h-full scroll-smooth antialiased`}
     >
       <head>
       </head>
@@ -115,4 +124,5 @@ export default function RootLayout({
     </html>
   );
 }
+
 

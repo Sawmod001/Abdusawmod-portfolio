@@ -1,4 +1,4 @@
-export interface ProjectDetail {
+﻿export interface ProjectDetail {
   label: string;
   items: string[];
 }
@@ -80,16 +80,16 @@ export const projectsData: Project[] = [
     id: 'nairaguard',
     title: 'NairaGuard',
     category: 'Full Stack',
-    description: 'Naira-aware AWS FinOps intelligence platform that helps Nigerian startups and professionals understand AWS spending, identify credible cloud-waste opportunities, and translate potential savings into estimated Naira impact — Demo-First with deterministic FX translation.',
+    description: 'Naira-aware AWS FinOps intelligence platform that helps Nigerian startups and professionals understand AWS spending, identify credible cloud-waste opportunities, and translate potential savings into estimated Naira impact, Demo-First with deterministic FX translation.',
     liveUrl: 'https://nairaguard-ng.vercel.app',
     githubUrl: 'https://github.com/Sawmod001/NAIRAGUARD',
     tags: ['Next.js 16', 'React 19', 'TypeScript', 'Prisma', 'PostgreSQL', 'NextAuth 5', 'Tailwind CSS', 'Zod', 'Vitest'],
     highlights: [
-      'Demo-First FinOps: 5 realistic scenarios with Cost Optimization Hub & Compute Optimizer evidence — no AWS credentials required',
-      'Deterministic Naira translation: USD × timestamped FX rate (e.g. $118.70 × ₦1,550 = ₦183,985 est.) — AI explains, never invents savings',
+      'Demo-First FinOps: 5 realistic scenarios with Cost Optimization Hub & Compute Optimizer evidence, no AWS credentials required',
+      'Deterministic Naira translation: USD × timestamped FX rate (e.g. $118.70 × ₦1,550 = ₦183,985 est.), AI explains, never invents savings',
       'Provider abstraction: interchangeable Demo & Live AWS providers without rewriting business logic',
       'Evidence-led recommendations: source, freshness, effort/risk/restart/rollback context for every opportunity',
-      'Tenant-isolated, read-only MVP with full traceability — every number has a source',
+      'Tenant-isolated, read-only MVP with full traceability, every number has a source',
     ],
     details: [
       {
@@ -110,8 +110,8 @@ export const projectsData: Project[] = [
           'SAVE: rightsizing, idle, storage & commitment recommendations with est. monthly savings',
           'PROTECT: USD cost + estimated NGN equivalent with explicit FX rate / timestamp / source',
           'Recommendation detail: current vs recommended config, est. cost/savings, savings %, effort, restart & rollback',
-          'AI explanation layer: summarizes & prioritizes evidence — never creates savings numbers',
-          'Demo Mode: 5 scenarios (Balanced, Waste-heavy, EC2-heavy, Storage-heavy, FX Pressure) — clearly labelled synthetic data',
+          'AI explanation layer: summarizes & prioritizes evidence, never creates savings numbers',
+          'Demo Mode: 5 scenarios (Balanced, Waste-heavy, EC2-heavy, Storage-heavy, FX Pressure), clearly labelled synthetic data',
         ],
       },
       {
@@ -128,7 +128,7 @@ export const projectsData: Project[] = [
     id: 'hakeela',
     title: 'Hakeela',
     category: 'Full Stack',
-    description: '"Building the Future of Tech Inclusion one community at a time" — Using AI + Empathy to create an inclusive and sustainable future of edtech for young Africans that are marginalized, underprivileged, and specially assisted.',
+    description: '"Building the Future of Tech Inclusion one community at a time", Using AI + Empathy to create an inclusive and sustainable future of edtech for young Africans that are marginalized, underprivileged, and specially assisted.',
     liveUrl: 'https://www.hakeela.org',
     tags: ['AI', 'EdTech', 'Social Impact', 'Community'],
   },
@@ -136,7 +136,7 @@ export const projectsData: Project[] = [
     id: 'bolaji-3d',
     title: 'Stunning 3D Website',
     category: 'Frontend',
-    description: 'Immersive 3D portfolio experience built with HTML, CSS & Spline — blending interactive 3D scenes, smooth animations, and responsive layout for a stunning visual storytelling.',
+    description: 'Immersive 3D portfolio experience built with HTML, CSS & Spline, blending interactive 3D scenes, smooth animations, and responsive layout for a stunning visual storytelling.',
     liveUrl: 'https://bolaji-inky.vercel.app/',
     githubUrl: 'https://github.com/Sawmod001/BOLAJI',
     tags: ['HTML', 'CSS', 'Spline', '3D', 'Responsive'],
@@ -145,7 +145,7 @@ export const projectsData: Project[] = [
     id: 'card-validation-api',
     title: 'Card Validation API',
     category: 'API',
-    description: 'A single POST endpoint that determines whether a card number is structurally valid — via the Luhn checksum, card-network prefix (IIN) matching, and network-specific length rules — run as an ordered validation pipeline. Live on Render.',
+    description: 'A single POST endpoint that determines whether a card number is structurally valid, via the Luhn checksum, card-network prefix (IIN) matching, and network-specific length rules, run as an ordered validation pipeline. Live on Render.',
     liveUrl: 'https://card-number-validation-api-op27.onrender.com',
     githubUrl: 'https://github.com/Sawmod001/card-number-validation-api',
     tags: ['Node.js', 'Express', 'REST API', 'Luhn', 'Render'],
@@ -156,3 +156,4 @@ export const projectsData: Project[] = [
     ],
   }
 ];
+

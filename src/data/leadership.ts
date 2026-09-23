@@ -1,4 +1,4 @@
-export interface LeadershipRole {
+﻿export interface LeadershipRole {
   id: string;
   role: string;
   organization: string;
@@ -13,7 +13,7 @@ export const leadershipData: LeadershipRole[] = [
     role: 'President-elect',
     organization: 'National Association of Kwara State Students (NAKSS), University of Ilorin Chapter',
     date: '2026/2027',
-    description: 'Elected to lead the umbrella body of Kwara State students at Unilorin — overseeing welfare, representation, and community programmes.',
+    description: 'Elected to lead the umbrella body of Kwara State students at Unilorin, overseeing welfare, representation, and community programmes.',
     highlights: ['President-elect for 2026/2027 academic session', 'Mandate: student welfare, advocacy, and Kwara community development on campus'],
   },
   {
@@ -24,13 +24,13 @@ export const leadershipData: LeadershipRole[] = [
     description:
       'Led institutional documentation, reporting, and administrative operations. Awarded Most Outstanding Executive of the Year.',
     highlights: [
-      'Founded Unfiltered Yoruba — a cultural and intellectual platform on "Yoruba Identity Beyond the Narrative"',
+      'Founded Unfiltered Yoruba, a cultural and intellectual platform on "Yoruba Identity Beyond the Narrative"',
       'Prepared and coordinated 100+ official letters, notices, invitations, sponsorship requests, and courtesy-visit correspondence',
     ],
   },
   {
     id: 'insu-senator',
-    role: 'Senator — INSU NHQ',
+    role: 'Senator, INSU NHQ',
     organization: 'INSU UNILORIN',
     date: '2025',
     description: 'Represented the INSU UNILORIN campus as Senator at the INSU National Headquarters (NHQ).',
@@ -70,7 +70,7 @@ export const leadershipData: LeadershipRole[] = [
   },
   {
     id: 'tis-unicorn',
-    role: 'Ethics Challenge — Team Unicorn',
+    role: 'Ethics Challenge, Team Unicorn',
     organization: 'The Investment Society (TIS), UNILORIN',
     date: '2026',
     description: 'Won 2nd position in the TIS Ethics Challenge.',
@@ -91,7 +91,7 @@ export const leadershipData: LeadershipRole[] = [
   },
   {
     id: 'au-simulation',
-    role: 'Delegate — Representing Mali',
+    role: 'Delegate, Representing Mali',
     organization: 'African Union Simulation Summit 2026',
     date: '2026',
     description: 'Represented Mali as a delegate at the African Union Simulation Summit 2026.',

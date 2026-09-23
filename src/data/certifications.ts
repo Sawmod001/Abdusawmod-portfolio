@@ -1,4 +1,4 @@
-export interface Certification {
+﻿export interface Certification {
   id: string;
   title: string;
   issuer: string;
@@ -16,7 +16,7 @@ export const certificationsData: Certification[] = [
     id: 'millennium-fellow',
     title: 'Global Millennium Fellow \'26',
     issuer: 'United Nations Academic Impact & Millennium Campus Network',
-    description: 'Selected from 60 nations — top 5% worldwide'
+    description: 'Selected from 60 nations, top 5% worldwide'
   },
   {
     id: 'boycode-africa',
@@ -77,3 +77,4 @@ export const certificationsData: Certification[] = [
     issuer: 'Techvoto'
   }
 ];
+
