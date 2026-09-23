@@ -56,7 +56,7 @@ export default function Intro() {
             transition={{ delay: 1.9, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-col items-center gap-3"
           >
-            <span className="font-mono text-[10px] tracking-[0.35em] text-stone-500 uppercase">Software Engineer</span>
+            <span className="font-mono text-[10px] tracking-[0.35em] text-stone-500 uppercase">Software Developer</span>
             <motion.span
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}

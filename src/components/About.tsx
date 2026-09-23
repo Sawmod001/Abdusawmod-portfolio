@@ -52,12 +52,7 @@ export default function About() {
                 </div>
                 <div className="mt-6 text-center">
                   <h3 className="text-[15px] font-semibold tracking-tight text-white">Abolaji Abdusawmod Akande</h3>
-                  <p className="mt-1 font-mono text-xs tracking-wide text-stone-400">Software Engineer, Full Stack</p>
                 </div>
-              </div>
-              <div className="h-px bg-gradient-to-r from-transparent via-amber-400/20 to-transparent" />
-              <div className="px-6 py-3 flex items-center justify-center">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400/80" />
               </div>
             </div>
           </motion.div>
