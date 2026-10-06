@@ -19,7 +19,13 @@ const categoryStyles: Record<Project['category'], { chip: string; gradient: stri
   Other: { chip: 'bg-slate-500/10 text-slate-300 border-slate-500/20', gradient: 'from-slate-500/20 via-gray-500/10 to-transparent', glow: 'group-hover:shadow-slate-500/10' },
 };
 
-const dedicated = new Set(['clockhost', 'nairaguard']);
+const dedicated = new Set(['clockhost', 'nairaguard', 'telepixels']);
+
+const previewImages: Record<string, string> = {
+  nairaguard: '/nairaguard-preview.png',
+  hakeela: '/photo_2026-09-21_11-59-31.jpg',
+  telepixels: '/telepixel-preview.jpg',
+};
 
 export default function Projects() {
   const flagshipProject = projectsData.find((p) => p.id === 'clockhost');
@@ -58,18 +64,9 @@ export default function Projects() {
                   <a href={flagshipProject.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-5 py-2.5 text-sm font-medium text-stone-200 hover:bg-white/[0.08] transition"><ExternalLink className="h-4 w-4" /> Live</a>
                 </div>
               </div>
-              <div className="order-1 lg:order-2 relative lg:col-span-6 min-h-[300px]">
-                <div className="absolute inset-0 bg-[radial-gradient(#4f46e5_1px,transparent_1px)] [background-size:22px_22px] opacity-[0.12]" />
-                <div className="absolute inset-8 sm:inset-10 flex items-center justify-center">
-                  <div className="w-full max-w-md overflow-hidden rounded-xl border border-white/10 bg-stone-900/70 shadow-2xl backdrop-blur">
-                    <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3"><span className="h-2.5 w-2.5 rounded-full bg-red-400/80" /><span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" /><span className="h-2.5 w-2.5 rounded-full bg-green-400/80" /><span className="ml-3 flex-1 truncate rounded-md bg-white/5 px-3 py-1 font-mono text-[10px] text-stone-500">clockhost.vercel.app</span></div>
-                    <div className="p-5">
-                      <div className="mb-4 flex items-center justify-between"><div className="h-3 w-16 rounded-full bg-white/10" /><div className="flex gap-1.5"><div className="h-2.5 w-2.5 rounded-full bg-white/10" /><div className="h-2.5 w-2.5 rounded-full bg-white/10" /></div></div>
-                      <div className="grid grid-cols-2 gap-3"><div className="col-span-2 h-20 rounded-lg bg-gradient-to-br from-amber-400/40 to-orange-400/30" /><div className="h-16 rounded-lg bg-white/5" /><div className="h-16 rounded-lg bg-white/5" /></div>
-                      <div className="mt-4 flex items-center justify-between"><div className="space-y-2"><div className="h-2.5 w-28 rounded-full bg-white/10" /><div className="h-2.5 w-20 rounded-full bg-white/5" /></div><div className="h-8 w-24 rounded-lg bg-amber-400" /></div>
-                    </div>
-                  </div>
-                </div>
+              <div className="order-1 lg:order-2 relative lg:col-span-6 min-h-[300px] bg-black">
+                <Image src="/clockhost-preview.jpg" alt="ClockHost preview, marketplace for venues and shortlets" fill className="object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity duration-300 group-hover:scale-[1.02]" sizes="(max-width: 1024px) 100vw, 50vw" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
               </div>
             </div>
           </motion.article>
@@ -87,12 +84,12 @@ export default function Projects() {
             return (
               <TiltCard key={project.id} max={4} className="h-full">
                 <motion.article initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-50px' }} transition={{ duration: 0.45, delay: index * 0.05 }} className={`group flex h-full flex-col overflow-hidden rounded-[14px] border border-white/10 bg-white/[0.03] shadow-[0_8px_20px_rgba(0,0,0,0.18)] hover:border-white/15 transition-colors ${style.glow}`}>
-                  <div className={`relative h-36 flex-shrink-0 overflow-hidden border-b border-white/10 ${project.id === 'nairaguard' || project.id === 'hakeela' ? 'bg-black' : `bg-gradient-to-br ${style.gradient}`}`}>
-                    {project.id === 'nairaguard' || project.id === 'hakeela' ? (
+                  <div className={`relative h-36 flex-shrink-0 overflow-hidden border-b border-white/10 ${previewImages[project.id] ? 'bg-black' : `bg-gradient-to-br ${style.gradient}`}`}>
+                    {previewImages[project.id] ? (
                       <>
-                        <Image src={project.id === 'nairaguard' ? '/nairaguard-preview.png' : '/photo_2026-09-21_11-59-31.jpg'} alt={project.title} fill className="object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity duration-300 group-hover:scale-[1.02]" sizes="(max-width: 768px) 100vw, 33vw" />
+                        <Image src={previewImages[project.id]} alt={project.title} fill className="object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity duration-300 group-hover:scale-[1.02]" sizes="(max-width: 768px) 100vw, 33vw" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                        <span className="absolute left-3 top-3 font-mono text-2xl font-bold text-white/90 drop-shadow">{project.id === 'nairaguard' ? '02' : '03'}</span>
+                        <span className="absolute left-3 top-3 font-mono text-2xl font-bold text-white/90 drop-shadow">{String(index + 2).padStart(2, '0')}</span>
                         <div className="absolute inset-x-3 bottom-3 flex items-center justify-between gap-2"><span className={`rounded-full border px-2.5 py-1 text-[10px] font-mono font-medium backdrop-blur bg-black/40 ${style.chip}`}>{project.category}</span></div>
                       </>
                     ) : (

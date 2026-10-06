@@ -6,10 +6,10 @@ import { projectsData } from '@/data/projects';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-const allowed = new Set(['clockhost', 'nairaguard']);
+const allowed = new Set(['clockhost', 'nairaguard', 'telepixels']);
 
 export function generateStaticParams() {
-  return [{ id: 'clockhost' }, { id: 'nairaguard' }];
+  return [{ id: 'clockhost' }, { id: 'nairaguard' }, { id: 'telepixels' }];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
@@ -27,6 +27,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
 
   const isClock = id === 'clockhost';
   const isNaira = id === 'nairaguard';
+  const isTele = id === 'telepixels';
 
   return (
     <>
@@ -67,18 +68,14 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                     <Image src="/nairaguard-preview.png" alt="NairaGuard preview, AWS FinOps with Naira" width={1200} height={675} className="w-full h-auto object-cover" priority />
                   </div>
                 )}
+                {isTele && (
+                  <div className="mt-7 overflow-hidden rounded-[12px] border border-white/10 bg-black">
+                    <Image src="/telepixel-preview.jpg" alt="TelePixels preview, medical imaging and teleradiology" width={1200} height={675} className="w-full h-auto object-cover" priority />
+                  </div>
+                )}
                 {isClock && (
-                  <div className="mt-7 overflow-hidden rounded-[12px] border border-white/10 bg-gradient-to-br from-amber-500/20 via-orange-500/10 to-stone-900 p-4">
-                    <div className="rounded-[10px] border border-white/10 bg-stone-900/70 overflow-hidden">
-                      <div className="flex items-center gap-2 border-b border-white/10 px-3 py-2"><span className="h-2.5 w-2.5 rounded-full bg-red-400/80" /><span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" /><span className="h-2.5 w-2.5 rounded-full bg-green-400/80" /><span className="ml-2 font-mono text-[11px] text-stone-500">clockhost.vercel.app, live marketplace</span></div>
-                      <div className="p-4 grid grid-cols-3 gap-3">
-                        <div className="col-span-3 h-20 rounded-lg bg-gradient-to-br from-amber-400/30 to-orange-400/20" />
-                        <div className="h-14 rounded-lg bg-white/5" />
-                        <div className="h-14 rounded-lg bg-white/5" />
-                        <div className="h-14 rounded-lg bg-white/5" />
-                      </div>
-                    </div>
-                    <p className="mt-3 text-center font-mono text-xs text-stone-400">ClockHost preview, full marketplace + bookings + Paystack</p>
+                  <div className="mt-7 overflow-hidden rounded-[12px] border border-white/10 bg-black">
+                    <Image src="/clockhost-preview.jpg" alt="ClockHost preview, marketplace for venues and shortlets" width={1200} height={675} className="w-full h-auto object-cover" priority />
                   </div>
                 )}
               </div>
