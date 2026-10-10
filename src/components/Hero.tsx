@@ -75,8 +75,8 @@ export default function Hero() {
               </Magnetic>
               <Magnetic className="w-full sm:w-auto" strength={0.28}>
                 <a
-                  href="/SAWMOD-RESUME.pdf"
-                  download="SAWMOD-RESUME.pdf"
+                  href="/ABDUSAWMOD-ABOLAJI-SOFTWARE-DEVELOPER-CV.pdf"
+                  download="ABDUSAWMOD-ABOLAJI-SOFTWARE-DEVELOPER-CV.pdf"
                   className="inline-flex w-full sm:w-auto items-center justify-center rounded-xl border border-white/10 bg-white/[0.06] backdrop-blur-md px-8 py-3.5 text-sm font-medium text-stone-200 hover:bg-white/[0.09] hover:border-white/15 transition-all active:scale-[0.98]"
                 >
                   Download CV

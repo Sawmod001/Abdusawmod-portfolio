@@ -5,27 +5,31 @@ export interface SkillCategory {
 
 export const skillsData: SkillCategory[] = [
   {
-    title: 'Languages',
-    skills: ['JavaScript', 'TypeScript']
+    title: 'Languages & Backend',
+    skills: ['JavaScript', 'TypeScript', 'Node.js', 'Express.js', 'MERN Stack', 'REST APIs', 'API Design & Integration']
   },
   {
     title: 'Frontend',
-    skills: ['React', 'Next.js', 'Tailwind CSS', 'HTML5/CSS3']
+    skills: ['React', 'Next.js', 'Tailwind CSS', 'Three.js', 'GSAP', 'HTML5/CSS3']
   },
   {
-    title: 'Backend',
-    skills: ['Node.js', 'Express.js', 'REST APIs', 'MVC']
+    title: 'AI',
+    skills: ['Google Gemini', 'Model Context Protocol (MCP)', 'LangGraph', 'RAG', 'Agentic AI', 'AI assistants']
   },
   {
     title: 'Security',
-    skills: ['JWT', 'Refresh Tokens', 'RBAC', 'Rate Limiting', 'bcrypt', 'OWASP fundamentals']
+    skills: ['JWT', 'Refresh Tokens', 'RBAC', 'Rate Limiting', 'bcrypt', 'OWASP']
   },
   {
     title: 'Databases',
-    skills: ['MongoDB', 'PostgreSQL', 'MySQL', 'Mongoose', 'Prisma']
+    skills: ['MongoDB', 'PostgreSQL', 'MySQL', 'Prisma ORM', 'Mongoose']
+  },
+  {
+    title: 'Practices',
+    skills: ['Workflow Automation', 'Performance Optimization & QA', 'MVC architecture']
   },
   {
     title: 'Cloud & Tools',
-    skills: ['AWS', 'Docker', 'Git/GitHub', 'Vercel', 'Postman', 'Cloudinary', 'Clerk', 'Paystack']
+    skills: ['AWS', 'Docker', 'Git/GitHub', 'Vercel', 'Postman', 'Clerk', 'Paystack', 'Cloudinary']
   }
 ];

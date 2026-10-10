@@ -39,7 +39,7 @@ export const leadershipData: LeadershipRole[] = [
     id: 'awc-coordinator',
     role: 'Welfare & Volunteer Coordinator',
     organization: 'AWC UNILORIN',
-    date: 'Jun 2026 – Present',
+    date: 'Nov 2025 – Aug 2026',
     highlights: [
       'Oversee 400+ members and coordinate a team of 50+ volunteers',
       'Record and coordinate weekly workforce meeting attendance',

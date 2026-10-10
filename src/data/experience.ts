@@ -11,7 +11,7 @@ export const experienceData: Experience[] = [
     id: 'hakeela',
     role: 'Full Stack Developer',
     company: 'Hakeela.org (Remote)',
-    date: 'Nov 2025 – Mar 2026',
+    date: 'Nov 2025 – Present',
     responsibilities: [
       'Built a JWT + refresh-token authorization system with scoped RBAC middleware to secure protected routes across the platform.',
       'Implemented sign-up, OTP verification, login, and password-reset flows, streamlining the user onboarding sequence.'

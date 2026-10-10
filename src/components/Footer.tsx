@@ -30,8 +30,8 @@ export default function Footer() {
               &copy; {new Date().getFullYear()} Abolaji Abdusawmod Akande. All rights reserved.
             </p>
             <a 
-              href="/SAWMOD-RESUME.pdf" 
-              download="SAWMOD-RESUME.pdf"
+              href="/ABDUSAWMOD-ABOLAJI-SOFTWARE-DEVELOPER-CV.pdf"
+              download="ABDUSAWMOD-ABOLAJI-SOFTWARE-DEVELOPER-CV.pdf"
               className="text-xs text-primary hover:underline underline-offset-4 transition-all"
             >
               Download Resume (PDF)

@@ -28,7 +28,7 @@ export default function AmbientBackground() {
     let H = 0;
     let raf = 0;
     let lastFrame = 0;
-    const FRAME_INTERVAL = isMobile ? 70 : 42;
+    const FRAME_INTERVAL = isMobile ? 55 : 42;
     let running = true;
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -41,8 +41,8 @@ export default function AmbientBackground() {
     const HOLD_DURATION = isMobile ? 140 : 180;
     const FADE_DURATION = 90;
     const WAIT_DURATION = 70;
-    const MAX_DEPTH = isMobile ? 6 : 7;
-    const GROWTH_SPEED_BASE = 0.016;
+    const MAX_DEPTH = 7;
+    const GROWTH_SPEED_BASE = isMobile ? 0.02 : 0.016;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let particles: any[] = [];
     let particleSprite: HTMLCanvasElement | null = null;
@@ -176,7 +176,7 @@ export default function AmbientBackground() {
 
     function createTree() {
       allBranches = [];
-      const trunkLen = H * rand(0.20, 0.26);
+      const trunkLen = H * (isMobile ? rand(0.26, 0.32) : rand(0.20, 0.26));
       const trunkThick = Math.max(7, W * 0.012);
       const trunkAngle = -Math.PI / 2 + rand(-0.06, 0.06);
       const approxTreeH = trunkLen * 3.2;
