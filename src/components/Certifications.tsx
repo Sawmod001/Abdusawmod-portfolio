@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
+import { Trophy, ArrowRight } from 'lucide-react';
 import { certificationsData } from '@/data/certifications';
 import { leadershipData } from '@/data/leadership';
 import TiltCard from '@/components/TiltCard';
@@ -19,7 +21,34 @@ export default function Certifications() {
           <div className="mt-5 h-px w-16 bg-amber-400/60" />
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="overflow-hidden rounded-[16px] border border-white/10 bg-white/[0.03] shadow-[0_10px_28px_rgba(0,0,0,0.22)]">
+        <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="overflow-hidden rounded-[16px] border border-amber-500/25 bg-white/[0.03] shadow-[0_10px_28px_rgba(0,0,0,0.22)]">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
+            <div className="lg:col-span-2 relative flex flex-col items-center justify-center min-h-[240px] p-8 bg-gradient-to-br from-amber-500/[0.12] via-transparent to-orange-500/[0.10]">
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_40%,rgba(255,176,28,0.12),transparent_65%)] pointer-events-none" />
+              <div className="relative flex h-14 w-14 items-center justify-center rounded-[14px] border border-amber-500/25 bg-amber-500/10 shadow-[0_0_28px_rgba(255,176,28,0.18)]">
+                <Trophy className="h-6 w-6 text-amber-300" />
+              </div>
+              <p className="relative mt-4 font-display text-[clamp(2.6rem,6vw,3.6rem)] font-semibold leading-none tracking-tight text-white uppercase" style={{ fontFamily: 'var(--font-teko)' }}>2nd <span className="text-amber-300">Place</span></p>
+              <p className="relative mt-2 font-mono text-xs tracking-[0.18em] text-stone-400 uppercase">$500 prize winner</p>
+            </div>
+            <div className="lg:col-span-3 p-6 sm:p-7 flex flex-col justify-center">
+              <span className="inline-flex w-fit rounded-full border border-amber-500/20 bg-amber-500/10 px-2.5 py-1 font-mono text-[11px] tracking-wide text-amber-300">HACKATHON, 2ND PLACE</span>
+              <h3 className="mt-3 text-[16px] font-semibold tracking-tight text-white">TelePixels, Teleradiology Platform (Co-founder)</h3>
+              <p className="mt-1 font-mono text-xs tracking-widest text-amber-300">STACSTART HACKATHON 2026</p>
+              <div className="mt-4 flex flex-wrap gap-1.5">
+                {['React', 'TypeScript', 'Node.js/Express', 'PostgreSQL', 'Google Gemini', 'MCP'].map((t) => (
+                  <span key={t} className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 font-mono text-[11px] text-stone-300">{t}</span>
+                ))}
+              </div>
+              <div className="mt-4 rounded-[12px] border border-amber-500/15 bg-amber-500/[0.06] p-3.5">
+                <p className="text-[13px] leading-relaxed text-stone-200">Placed 2nd out of 96 projects (323 participants, 4 countries) and won the $500 prize.</p>
+              </div>
+              <Link href="/projects/telepixels" className="group mt-4 inline-flex w-fit items-center gap-2 text-[13px] font-medium text-amber-300 hover:text-amber-200 transition-colors">View case study <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" /></Link>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mt-6 overflow-hidden rounded-[16px] border border-white/10 bg-white/[0.03] shadow-[0_10px_28px_rgba(0,0,0,0.22)]">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
             <div className="lg:col-span-3 relative bg-[#0f172a] flex items-center justify-center min-h-[240px] p-0">
               <Image src="/aws-certified.svg" alt="AWS Certified Cloud Practitioner" width={800} height={450} className="w-full h-auto object-contain" />
