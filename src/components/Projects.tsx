@@ -25,6 +25,7 @@ const previewImages: Record<string, string> = {
   nairaguard: '/nairaguard-preview.png',
   hakeela: '/photo_2026-09-21_11-59-31.jpg',
   telepixels: '/telepixel-preview.jpg',
+  rayaam: '/rayaam-hub.jpg',
 };
 
 export default function Projects() {

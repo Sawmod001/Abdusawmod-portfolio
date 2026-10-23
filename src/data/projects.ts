@@ -145,6 +145,20 @@ export const projectsData: Project[] = [
       'Context-aware AI-assisted reporting that prepares the correct template and polishes findings, never diagnoses',
       'Role-based access for facility admin, radiologist, sonographer, radiographer and receptionist with audit logs',
     ],
-  }
+  },
+  {
+    id: 'rayaam',
+    title: 'Rayaam Beauty',
+    category: 'Frontend',
+    description: 'Hair-care and hairstyling brand platform combining a growing scalp-care product catalog, a professional Hair Studio service menu, a practical hair education journal, and WhatsApp-native ordering and appointment booking.',
+    liveUrl: 'https://rayaam-beauty.pages.dev/',
+    tags: ['Next.js', 'React', 'Tailwind CSS', 'Cloudflare Pages', 'WhatsApp Integration', 'Responsive Design'],
+    highlights: [
+      'Live product catalog: Anti-Dandruff Cream (in stock) plus a staged coming-soon pipeline, each product linked to prefilled WhatsApp order messages',
+      'Hair Studio service menu (natural styling, twists, locs, treatments, steaming, tinting) with appointments routed directly to WhatsApp',
+      'Six-step Rayaam Method and an 11-topic Hair Journal education section built for practical, repeatable routines',
+      'Dedicated privacy, terms and contact pages with a multi-platform community block linking Instagram, X and WhatsApp',
+    ],
+  },
 ];
 
